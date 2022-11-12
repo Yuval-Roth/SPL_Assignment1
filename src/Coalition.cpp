@@ -18,11 +18,5 @@ void Coalition::addParty(const Party& party)
 const list<const Party&>& Coalition::getMembers()
 {
 
-    return *Members;
-}
-
-Coalition::~Coalition()
-{
-    delete Members;
-    delete Already_Proposed;
+    return Members;
 }

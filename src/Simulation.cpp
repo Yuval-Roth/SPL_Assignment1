@@ -2,7 +2,7 @@
 
 Simulation::Simulation(Graph graph, vector<Agent> agents) : mGraph(graph), mAgents(agents) 
 {
-    // You can change the implementation of the constructor, but not the signature!
+    
 }
 
 void Simulation::step()
@@ -40,10 +40,4 @@ const vector<vector<int>> Simulation::getPartiesByCoalitions() const
 {
     // TODO: you MUST implement this method for getting proper output, read the documentation above.
     return vector<vector<int>>();
-}
-
-Simulation::~Simulation()
-{
-    delete coalitions;
-
 }

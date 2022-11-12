@@ -27,6 +27,7 @@ public:
 private:
     Graph mGraph;
     vector<Agent> mAgents;
-    list<Coalition>* coalitions;
+    list<Coalition> coalitions;
     int CoalitionIdCounter;
+    list<Party&> collectingOffersParties;
 };

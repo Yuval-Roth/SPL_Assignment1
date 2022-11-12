@@ -15,11 +15,12 @@ public:
     int getPartyId() const;
     int getId() const;
     void step(Simulation &);
-    void setCoalition(Coalition& coalition);
-
+    void setCoalition(int coalitionId);
+    int getCoalition();
 private:
     int mAgentId;
     int mPartyId;
     SelectionPolicy *mSelectionPolicy;
-    Coalition& joinedCoalition;
+    bool alreadySet;
+    int coalitionId;
 };
