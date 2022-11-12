@@ -1,4 +1,5 @@
-#pragma once
+#ifndef Coalitions_h
+#define Coalitions_h
 
 #include <list>
 #include "Party.h"
@@ -23,4 +24,4 @@ class Coalition
     const list<int>& getMembers() const;
 
 };
-
+#endif

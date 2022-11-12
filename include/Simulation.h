@@ -1,4 +1,5 @@
-#pragma once
+#ifndef Simulation_h
+#define Simulation_h
 
 #include <vector>
 #include <list>
@@ -33,3 +34,4 @@ private:
     int CoalitionIdCounter;
     list<int> collectingOffersParties;
 };
+#endif

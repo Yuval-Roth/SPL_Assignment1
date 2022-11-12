@@ -1,6 +1,7 @@
 #include <iostream>
 #include <iomanip>
 #include "../include/Parser.h"
+#include "Simulation.h"
 
 using std::cout;
 using std::endl;
@@ -12,7 +13,6 @@ int main(int argc, char **argv)
         cout << "usage: " << argv[0] << " <config_path>" << endl;
         return -1;
     }
-
     // read simulation from config file
     const string config_path = argv[1];
     Simulation simulation = Parser::readSimulation(argv[1]);

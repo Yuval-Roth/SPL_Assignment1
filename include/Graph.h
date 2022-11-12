@@ -1,4 +1,6 @@
-#pragma once
+#ifndef Graph_h
+#define Graph_h
+
 #include <vector>
 #include "Party.h"
 
@@ -18,3 +20,4 @@ private:
     vector<Party> mVertices;
     vector<vector<int>> mEdges;
 };
+#endif

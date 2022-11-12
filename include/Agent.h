@@ -1,4 +1,5 @@
-#pragma once
+#ifndef Agent_h
+#define Agent_h
 
 #include <vector>
 #include "Graph.h"
@@ -23,3 +24,4 @@ private:
     bool alreadySet;
     int coalitionId;
 };
+#endif

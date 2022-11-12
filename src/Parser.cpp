@@ -1,4 +1,5 @@
 #include "../include/Parser.h"
+#include "Simulation.h"
 
 Simulation Parser::readSimulation(const string &path)
 {

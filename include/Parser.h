@@ -1,10 +1,12 @@
-#pragma once
+#ifndef Parser_h
+#define Parser_h
+
 #include <string>
 #include <iostream>
 #include <fstream>
 
 #include "json.hpp"
-#include "Simulation.h"
+// #include "Simulation.h"
 #include "Agent.h"
 #include "SelectionPolicy.h"
 #include "JoinPolicy.h"
@@ -24,3 +26,4 @@ private:
     static Agent parseAgent(const json &jAgent, int agentId);
     static Party parseParty(const json &jParty, const int id);
 };
+#endif

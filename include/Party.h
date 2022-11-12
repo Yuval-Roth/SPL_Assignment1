@@ -1,4 +1,5 @@
-#pragma once
+#ifndef Party_h
+#define Party_h
 #include <string>
 
 using std::string;
@@ -31,3 +32,4 @@ private:
     JoinPolicy *mJoinPolicy;
     State mState;
 };
+#endif
