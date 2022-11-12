@@ -24,3 +24,7 @@ const Party &Graph::getParty(int partyId) const
 {
     return mVertices[partyId];
 }
+Party &Graph::getParty_non_const(int partyId)
+{
+    return mVertices[partyId];
+}

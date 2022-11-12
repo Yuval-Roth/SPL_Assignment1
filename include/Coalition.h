@@ -9,7 +9,7 @@ class Coalition
 {
     private:
     
-    list<const Party &> Members;
+    list<int> Members;
     list<int> Already_Proposed;
 
 
@@ -17,9 +17,9 @@ class Coalition
 
     Coalition(int CoalitionId) : CoalitionId(CoalitionId){};
     const int CoalitionId;
-    const bool checkIfAlreadyProposed(int PartyId);
-    void addParty(const Party & party);
-    const list<const Party&>& getMembers();
+    const bool checkIfAlreadyProposed(int partyId);
+    void addParty(int partyId);
+    const list<int>& getMembers() const;
 
 };
 

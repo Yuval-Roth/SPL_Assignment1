@@ -3,7 +3,6 @@
 #include <vector>
 #include "Graph.h"
 
-class Coalition;
 
 class SelectionPolicy;
 

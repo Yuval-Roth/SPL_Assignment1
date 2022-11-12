@@ -29,7 +29,7 @@ void Agent::setCoalition(int coalitionId)
         this->coalitionId = coalitionId;
         alreadySet = true;
     }
-    else throw std::runtime_error("Cannot change coalitions once they are set");
+    // else throw std::runtime_error("Cannot change coalitions once they are set");
 }
 int Agent::getCoalition()
 {

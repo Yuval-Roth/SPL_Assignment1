@@ -1,14 +1,18 @@
 #include "../include/Simulation.h"
+#include "Coalition.cpp"
 
 Simulation::Simulation(Graph graph, vector<Agent> agents) : mGraph(graph), mAgents(agents) 
 {
-    
+
 }
 
 void Simulation::step()
 {
-    // TODO: implement this method
     //parties step
+    for (int partyId : collectingOffersParties)
+    {
+        mGraph.getParty_non_const(partyId).step(*this);
+    }
     //agents step
     
 }
@@ -32,6 +36,13 @@ const vector<Agent> &Simulation::getAgents() const
 const Party &Simulation::getParty(int partyId) const
 {
     return mGraph.getParty(partyId);
+}
+
+const Coalition& Simulation::getCoalition(int coalitionId)
+{
+    std::_List_iterator<Coalition> iter ;
+    for (iter = coalitions.begin() ; iter->CoalitionId != coalitionId ; iter++){} 
+    return *iter;
 }
 
 /// This method returns a "coalition" vector, where each element is a vector of party IDs in the coalition.

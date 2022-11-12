@@ -9,14 +9,12 @@ const bool Coalition::checkIfAlreadyProposed(int PartyId)
 
 }
 
-void Coalition::addParty(const Party& party)
+void Coalition::addParty(int partyId)
 {
-    // TODO : Complete this implementation
-
+    Members.push_front(partyId);
 }
 
-const list<const Party&>& Coalition::getMembers()
+const list<int>& Coalition::getMembers() const
 {
-
     return Members;
 }

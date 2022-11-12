@@ -10,6 +10,8 @@ using std::string;
 using std::vector;
 using std::list;
 
+class Coalition;
+
 class Simulation
 {
 public:
@@ -22,12 +24,13 @@ public:
     const vector<Agent> &getAgents() const;
     const Party &getParty(int partyId) const;
     const vector<vector<int>> getPartiesByCoalitions() const;
-    ~Simulation();
+    const Coalition& getCoalition(int coalitionId);
+
 
 private:
     Graph mGraph;
     vector<Agent> mAgents;
     list<Coalition> coalitions;
     int CoalitionIdCounter;
-    list<Party&> collectingOffersParties;
+    list<int> collectingOffersParties;
 };
