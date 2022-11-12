@@ -1,6 +1,6 @@
 #include "../include/Coalition.h"
 
-const bool Coalition::CheckIfAlreadyProposed(int PartyId)
+const bool Coalition::checkIfAlreadyProposed(int PartyId)
 {
 
     
@@ -9,8 +9,20 @@ const bool Coalition::CheckIfAlreadyProposed(int PartyId)
 
 }
 
-void Coalition::AddParty(Party& party)
+void Coalition::addParty(const Party& party)
 {
     // TODO : Complete this implementation
 
+}
+
+const list<const Party&>& Coalition::getMembers()
+{
+
+    return *Members;
+}
+
+Coalition::~Coalition()
+{
+    delete Members;
+    delete Already_Proposed;
 }
