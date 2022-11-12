@@ -3,14 +3,13 @@
 #include <vector>
 #include <list>
 
-#include "Graph.h"
 #include "Agent.h"
+#include "Coalition.h"
 
 using std::string;
 using std::vector;
 using std::list;
 
-class Coalition;
 
 class Simulation
 {
