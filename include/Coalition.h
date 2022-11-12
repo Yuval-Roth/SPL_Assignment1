@@ -9,15 +9,18 @@ class Coalition
 {
     private:
     
-    list<Party &>* Members;
+    list<const Party &>* Members;
     list<int>* Already_Proposed;
+
 
     public:
 
     Coalition(int CoalitionId) : CoalitionId(CoalitionId){};
     const int CoalitionId;
-    const bool CheckIfAlreadyProposed(int PartyId);
-    void AddParty(Party & party);
+    const bool checkIfAlreadyProposed(int PartyId);
+    void addParty(const Party & party);
+    const list<const Party&>& getMembers();
+    ~Coalition();
 
 };
 
