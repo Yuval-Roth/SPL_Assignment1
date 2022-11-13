@@ -15,8 +15,7 @@ class Coalition
 
 
     public:
-
-    Coalition(int CoalitionId) : CoalitionId(CoalitionId){};
+    Coalition(int CoalitionId);
     const int CoalitionId;
     const bool checkIfAlreadyProposed(int partyId);
     void flagAsProposed(int partyId);

@@ -4,7 +4,14 @@ Party::Party(int id, string name, int mandates, JoinPolicy *jp) : mId(id), mName
 {
     // You can change the implementation of the constructor, but not the signature!
 }
-
+Party::Party(const Party& other): mId(other.mId), mName(other.mName), mMandates(other.mMandates), mJoinPolicy(other.mJoinPolicy), mState(other.mState)
+{
+    //TODO: Implement clone for the join policy
+}
+Party Party::operator=(const Party& other)
+{   
+    return *this;
+}
 State Party::getState() const
 {
     return mState;
@@ -29,3 +36,7 @@ void Party::step(Simulation &s)
 {
     // TODO: implement this method
 }
+// Party::~Party()
+// {
+//     delete mJoinPolicy;
+// }

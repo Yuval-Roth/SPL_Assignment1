@@ -1,5 +1,10 @@
 #include "../include/Coalition.h"
 
+Coalition::Coalition(int coalitionId) : CoalitionId(coalitionId),Members(),Already_Proposed()
+{
+    
+}
+
 const bool Coalition::checkIfAlreadyProposed(int partyId)
 {
     std::_List_iterator<int> iter ;
