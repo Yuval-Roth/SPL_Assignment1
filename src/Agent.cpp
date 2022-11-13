@@ -1,5 +1,5 @@
 #include "../include/Agent.h"
-#include "Simulation.h"
+#include "../include/Simulation.h"
 #include <stdexcept>
 
 Agent::Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy) : mAgentId(agentId), mPartyId(partyId), mSelectionPolicy(selectionPolicy), coalitionId(-1)
