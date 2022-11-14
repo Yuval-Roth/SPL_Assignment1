@@ -25,17 +25,19 @@ int Agent::getPartyId() const
 void Agent::step(Simulation &sim)
 {
     const Graph& graph = sim.getGraph();
+    Coalition& coalition = sim.getCoalition();
     int pCount = graph.getNumVertices();
     list<Party> partiesToPropose;
     for(int i = 0; i< pCount ; i++)
     {
-        if(i != mPartyId && sim.getCoalition(coalitionId).checkIfAlreadyProposed(i))
+        if(i != mPartyId && coalition.checkIfAlreadyProposed(i))
         {
             partiesToPropose.push_front(graph.getParty(i));
         }
     }
     Party& toPropose = mSelectionPolicy -> selectParty(partiesToPropose);
-    toPropose.AcceptOffer(sim.getCoalition(coalitionId));
+    toPropose.AcceptOffer(coalition.CoalitionId);
+    coalition.flagAsProposed(toPropose.getId());
 }
 
 void Agent::setCoalition(int coalitionId)

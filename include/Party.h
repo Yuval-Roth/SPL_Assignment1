@@ -26,7 +26,8 @@ public:
     int getMandates() const;
     void step(Simulation &s);
     const string &getName() const;
-    void acceptOffer(Coalition& coalition); 
+    void acceptOffer(int); 
+    int getId(){} const;
 
     // ~Party();
 private:
@@ -36,5 +37,6 @@ private:
     JoinPolicy *mJoinPolicy;
     State mState;
     int timer;
+    list<int> offers;
 };
 #endif

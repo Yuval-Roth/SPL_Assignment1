@@ -45,7 +45,7 @@ const Party &Simulation::getParty(int partyId) const
     return mGraph.getParty(partyId);
 }
 
-const Coalition& Simulation::getCoalition(int coalitionId)
+Coalition& Simulation::getCoalition(int coalitionId)
 {
     std::_List_iterator<Coalition> iter ;
     for (iter = coalitions.begin() ; iter->CoalitionId != coalitionId ; iter++){} 
