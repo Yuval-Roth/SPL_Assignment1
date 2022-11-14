@@ -40,7 +40,7 @@ void Party::step(Simulation &s)
     const Graph& graph = s.getGraph();
 
     for(Party party: graph.mVertices){
-        if (party.setState() == State.CollectingsOffers)
+        if (party.getState() == State.CollectingsOffers)
         {
             if (party.timer == 3)
             {
@@ -51,14 +51,8 @@ void Party::step(Simulation &s)
             {
                 party.timer++;
             }
-            
         }
-        
-
     }
-
-    
-    
 }
 // Party::~Party()
 // {
