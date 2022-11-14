@@ -3,7 +3,7 @@
 
 class JoinPolicy {
     public:
-        virtual void selectParty(const list<Party> &) const = 0;
+        virtual int selectCoalition(const list<Party> &) const = 0;
 };
 
 class MandatesJoinPolicy : public JoinPolicy {};
