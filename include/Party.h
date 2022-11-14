@@ -26,7 +26,7 @@ public:
     int getMandates() const;
     void step(Simulation &s);
     const string &getName() const;
-    void acceptOffer(int); 
+    void acceptOffer(int); //agent give the party an offer
     int getId(){} const;
 
     // ~Party();

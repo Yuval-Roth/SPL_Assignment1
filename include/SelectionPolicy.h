@@ -10,7 +10,7 @@ class SelectionPolicy
 {
     public: 
 
-    virtual Party& selectParty(const list<Party> &) const = 0;
+    virtual Party& selectParty(const list<Party> &) const = 0; 
 };
 
 #endif

@@ -37,11 +37,17 @@ const string & Party::getName() const
 void Party::step(Simulation &s)
 {
     // TODO: implement this method
-    Graph g = s.getGraph();
+    const Graph& g = s.getGraph();
 
     for(Party p : g.mVertices){
         if (p.setState() == State.CollectingsOffers)
         {
+            p.timer++;
+            if (p.timer == 3)
+            {
+                p.
+                p.setState(State.Joined)
+            }
             
         }
         
