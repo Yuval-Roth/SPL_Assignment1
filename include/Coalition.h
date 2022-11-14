@@ -17,7 +17,7 @@ class Coalition
     public:
     
     Coalition(int CoalitionId);
-    bool checkIfAlreadyProposed(int partyId);
+    bool checkIfAlreadyProposed(int partyId) const;
     void flagAsProposed(int partyId);
     void addParty(int partyId);
     const list<int>& getMembers() const;

@@ -1,8 +1,10 @@
 #ifndef Party_h
 #define Party_h
 #include <string>
+#include <list>
 
 using std::string;
+using std::list;
 
 class JoinPolicy;
 class Simulation;
@@ -27,7 +29,7 @@ public:
     void step(Simulation &s);
     const string &getName() const;
     void acceptOffer(int); 
-    int getId(){} const;
+    int getId() const;
 
     // ~Party();
 private:
