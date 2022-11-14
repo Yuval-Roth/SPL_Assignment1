@@ -32,7 +32,10 @@ void Agent::step(Simulation &sim)
     {
         if(i != mPartyId && coalition.checkIfAlreadyProposed(i))
         {
-            partiesToPropose.push_front(graph.getParty(i));
+            if(graph.getEdgeWeight(i,mPartyId) > 0)
+            {
+                partiesToPropose.push_front(graph.getParty(i));
+            }            
         }
     }
     Party& toPropose = mSelectionPolicy -> selectParty(partiesToPropose);
