@@ -1,4 +1,6 @@
 #include "../include/Party.h"
+#include "../include/Simulation.h"
+#include "../include/Graph.h"
 
 Party::Party(int id, string name, int mandates, JoinPolicy *jp) : mId(id), mName(name), mMandates(mandates), mJoinPolicy(jp), mState(Waiting) 
 {
@@ -35,6 +37,19 @@ const string & Party::getName() const
 void Party::step(Simulation &s)
 {
     // TODO: implement this method
+    Graph g = s.getGraph();
+
+    for(Party p : g.mVertices){
+        if (p.setState() == State.CollectingsOffers)
+        {
+            
+        }
+        
+
+    }
+
+    
+    
 }
 // Party::~Party()
 // {
