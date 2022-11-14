@@ -14,6 +14,10 @@ void Simulation::step()
         mGraph.getParty_non_const(partyId).step(*this);
     }
     //agents step
+    for(Agent agent : mAgents)
+    {
+        agent.step(*this);
+    }
     
 }
 
