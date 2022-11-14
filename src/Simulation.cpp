@@ -2,8 +2,11 @@
 
 Simulation::Simulation(Graph graph, vector<Agent> agents) : mGraph(graph),
 mAgents(agents), coalitions(),CoalitionIdCounter(0),collectingOffersParties() 
-{
-
+{   
+    for(Agent agent : mAgents)
+    {
+        agent.setCoalition(CoalitionIdCounter++);
+    }
 }
 
 void Simulation::step()
