@@ -2,7 +2,8 @@
 #include "../include/Simulation.h"
 #include <stdexcept>
 
-Agent::Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy) : mAgentId(agentId), mPartyId(partyId), mSelectionPolicy(selectionPolicy), coalitionId(-1)
+Agent::Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy) : mAgentId(agentId), mPartyId(partyId),
+ mSelectionPolicy(selectionPolicy),  alreadySet(false),coalitionId(-1)
 {
     // You can change the implementation of the constructor, but not the signature!
 }

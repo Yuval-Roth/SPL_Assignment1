@@ -8,7 +8,7 @@ Party::Party(const Party& other): mId(other.mId), mName(other.mName), mMandates(
 {
     //TODO: Implement clone for the join policy
 }
-Party Party::operator=(const Party& other)
+Party& Party::operator=(const Party& other)
 {   
     return *this;
 }

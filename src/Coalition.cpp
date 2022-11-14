@@ -1,6 +1,6 @@
 #include "../include/Coalition.h"
 
-Coalition::Coalition(int coalitionId) : CoalitionId(coalitionId),Members(),Already_Proposed()
+Coalition::Coalition(int coalitionId) : Members(),Already_Proposed(),CoalitionId(coalitionId)
 {
     
 }

@@ -15,12 +15,14 @@ class Coalition
 
 
     public:
+    
     Coalition(int CoalitionId);
-    const int CoalitionId;
     const bool checkIfAlreadyProposed(int partyId);
     void flagAsProposed(int partyId);
     void addParty(int partyId);
     const list<int>& getMembers() const;
+
+    const int CoalitionId;
 
 };
 #endif
