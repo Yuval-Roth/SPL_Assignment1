@@ -1,9 +1,10 @@
 #ifndef JoinPolicy_h
 #define JoinPolicy_h
 
-class JoinPolicy {
+class JoinPolicy
+ {
     public:
-        virtual int selectCoalition(const list<Party> &) const = 0;
+        virtual int selectCoalition(const list<Party*> &) const = 0;
 };
 
 class MandatesJoinPolicy : public JoinPolicy {};

@@ -1,5 +1,7 @@
 #include "../include/Parser.h"
 #include "Simulation.h"
+#include "MandatesSelectionPolicy.h"
+#include "EdgeWeightSelectionPolicy.h"
 
 Simulation Parser::readSimulation(const string &path)
 {

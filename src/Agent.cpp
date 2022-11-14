@@ -6,11 +6,16 @@
 using std::list;
 
 
-Agent::Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy) : mAgentId(agentId), mPartyId(partyId),
- mSelectionPolicy(selectionPolicy),  alreadySet(false),coalitionId(-1)
+Agent::Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy) : mAgentId(agentId), mPartyId(partyId),mSelectionPolicy(selectionPolicy)
 {
     // You can change the implementation of the constructor, but not the signature!
 }
+Agent::Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy, Coalition* coalition) : mAgentId(agentId), mPartyId(partyId),mSelectionPolicy(selectionPolicy),coalition(coalition)
+
+{
+    // You can change the implementation of the constructor, but not the signature!
+}
+
 
 int Agent::getId() const
 {
@@ -24,35 +29,36 @@ int Agent::getPartyId() const
 
 void Agent::step(Simulation &sim)
 {
-    const Graph& graph = sim.getGraph();
-    Coalition& coalition = sim.getCoalition(coalitionId);
+    Graph& graph = sim.getGraph_non_const();
     int pCount = graph.getNumVertices();
-    list<Party> partiesToPropose;
+    list<Party*> partiesToPropose;
     for(int i = 0; i< pCount ; i++)
     {
-        if(i != mPartyId && coalition.checkIfAlreadyProposed(i))
+        if(i != mPartyId && coalition->checkIfAlreadyProposed(i))
         {
             if(graph.getEdgeWeight(i,mPartyId) > 0)
             {
-                partiesToPropose.push_front(graph.getParty(i));
+                partiesToPropose.push_front(&(graph.getParty_non_const(i)));
             }            
         }
     }
-    Party& toPropose = mSelectionPolicy -> selectParty(partiesToPropose);
-    toPropose.acceptOffer(coalition.CoalitionId);
-    coalition.flagAsProposed(toPropose.getId());
+
+    //Do not delete toPropose
+    Party* toPropose = mSelectionPolicy -> selectParty(partiesToPropose);
+    toPropose->acceptOffer(*coalition);
+    coalition->flagAsProposed(toPropose->getId());
 }
 
-void Agent::setCoalition(int coalitionId)
+void Agent::setCoalition(Coalition& coalition)
 {
     if(not alreadySet)
     {
-        this->coalitionId = coalitionId;
+        this->coalition = &coalition;
         alreadySet = true;
     }
     else throw std::runtime_error("Cannot change coalitions once they are set");
 }
-int Agent::getCoalition()
+Coalition& Agent::getCoalition()
 {
-    return coalitionId;
+    return *coalition;
 }

@@ -1,3 +1,14 @@
+
+#ifndef State_enum
+#define State_enum
+enum State
+{
+    Waiting,
+    CollectingOffers,
+    Joined
+};
+#endif
+
 #ifndef Party_h
 #define Party_h
 #include <string>
@@ -8,13 +19,7 @@ using std::list;
 
 class JoinPolicy;
 class Simulation;
-
-enum State
-{
-    Waiting,
-    CollectingOffers,
-    Joined
-};
+class Coalition;
 
 class Party
 {
@@ -29,7 +34,7 @@ public:
     void step(Simulation &s);
     const string &getName() const;
     int getId() const;
-    void acceptOffer(int); //agent give the party an offer
+    void acceptOffer(Coalition&); //agent give the party an offer
 
     // ~Party();
 private:
@@ -39,6 +44,6 @@ private:
     JoinPolicy *mJoinPolicy;
     State mState;
     int timer;
-    list<int> offers;
+    list<Coalition*> offers;
 };
 #endif

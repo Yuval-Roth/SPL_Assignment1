@@ -54,6 +54,11 @@ void Party::step(Simulation &s)
         }
     }
 }
+
+void Party::acceptOffer(Coalition& coalition)
+{
+    //TODO: Implement this method
+}
 // Party::~Party()
 // {
 //     delete mJoinPolicy;

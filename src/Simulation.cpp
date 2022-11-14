@@ -1,11 +1,14 @@
 #include "../include/Simulation.h"
+#include "../include/Graph.h"
 
 Simulation::Simulation(Graph graph, vector<Agent> agents) : mGraph(graph),
 mAgents(agents), coalitions(),CoalitionIdCounter(0),collectingOffersParties() 
 {   
     for(Agent agent : mAgents)
     {
-        agent.setCoalition(CoalitionIdCounter++);
+        Coalition coalition = new Coalition(CoalitionIdCounter++);
+        agent.setCoalition(*coalition);
+        coalitions.push_back(coalition);
     }
 }
 
@@ -30,7 +33,7 @@ bool Simulation::shouldTerminate() const
     return true;
 }
 
-const Graph &Simulation::getGraph() const
+const Graph& Simulation::getGraph() const
 {
     return mGraph;
 }
@@ -40,7 +43,7 @@ const vector<Agent> &Simulation::getAgents() const
     return mAgents;
 }
 
-const Party &Simulation::getParty(int partyId) const
+const Party& Simulation::getParty(int partyId) const
 {
     return mGraph.getParty(partyId);
 }
@@ -58,4 +61,12 @@ const vector<vector<int>> Simulation::getPartiesByCoalitions() const
 {
     // TODO: you MUST implement this method for getting proper output, read the documentation above.
     return vector<vector<int>>();
+}
+
+Simulation::~Simulation()
+{
+    for(Coalition coalition : coalitions)
+    {
+        delete coalition;
+    }
 }

@@ -1,4 +1,5 @@
 #include "../include/Graph.h"
+#include <stdexcept>
 
 Graph::Graph(vector<Party> vertices, vector<vector<int>> edges) : mVertices(vertices), mEdges(edges) 
 {
@@ -26,5 +27,11 @@ const Party &Graph::getParty(int partyId) const
 }
 Party &Graph::getParty_non_const(int partyId)
 {
+
     return mVertices[partyId];
+    // if(partyId > getNumVertices()) throw std::runtime_error("invalid partyId");
+
+    // std::_List_iterator<Party> iter ;
+    // for (iter = mVertices.begin() ; iter->getId() != partyId ; iter++){ }
+    // return *iter;
 }

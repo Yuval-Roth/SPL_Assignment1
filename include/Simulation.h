@@ -11,6 +11,8 @@ using std::string;
 using std::vector;
 using std::list;
 
+class Graph;
+
 
 class Simulation
 {
@@ -21,6 +23,7 @@ public:
     bool shouldTerminate() const;
 
     const Graph &getGraph() const;
+    Graph &getGraph_non_const();
     const vector<Agent> &getAgents() const;
     const Party &getParty(int partyId) const;
     const vector<vector<int>> getPartiesByCoalitions() const;
@@ -32,6 +35,7 @@ private:
     vector<Agent> mAgents;
     list<Coalition> coalitions;
     int CoalitionIdCounter;
-    list<int> collectingOffersParties;
+    list<Party*> collectingOffersParties;
+    // Party* parties;
 };
 #endif
