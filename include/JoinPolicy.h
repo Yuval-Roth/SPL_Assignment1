@@ -1,7 +1,8 @@
 #ifndef JoinPolicy_h
 #define JoinPolicy_h
 
-#include "../include/Coalition.h"
+#include "Coalition.h"
+#include "Party.h"
 
 class JoinPolicy
  {

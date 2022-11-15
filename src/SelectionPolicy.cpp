@@ -1,4 +1,5 @@
 #include "../include/SelectionPolicy.h"
+#include "../include/JoinPolicy.h"
 
 
 EdgeWeightSelectionPolicy::EdgeWeightSelectionPolicy()
@@ -6,10 +7,10 @@ EdgeWeightSelectionPolicy::EdgeWeightSelectionPolicy()
     
 }
 
-Party* EdgeWeightSelectionPolicy::selectParty(const list<Party*> & party)
+Party* EdgeWeightSelectionPolicy::selectParty(list<Party*> & party)
 {
     // TODO: Implement this method
-    return new Party(0, "temp", 0,new EdgeWeightSelectionPolicy());
+    return new Party(0, "temp", 0,new MandatesJoinPolicy());
 }
 
 
@@ -19,8 +20,8 @@ MandatesSelectionPolicy::MandatesSelectionPolicy()
     
 }
 
-Party* MandatesSelectionPolicy::selectParty(const list<Party*>& party)
+Party* MandatesSelectionPolicy::selectParty(list<Party*>& party)
 {
     // TODO: Implement this method
-    return new Party(0, "temp", 0,new MandatesSelectionPolicy());
+    return new Party(0, "temp", 0,new MandatesJoinPolicy());
 }

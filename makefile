@@ -1,6 +1,6 @@
 all: clean bin/cRace
 
-bin/cRace: bin/main.o bin/Agent.o bin/Coalition.o bin/Graph.o bin/Parser.o bin/Party.o bin/Simulation.o
+bin/cRace: bin/main.o bin/Agent.o bin/Coalition.o bin/Graph.o bin/Parser.o bin/Party.o bin/Simulation.o bin/SelectionPolicy.o bin/JoinPolicy.o
 	g++ -o bin/cRace bin/*
 	#  g++ -o bin/cRace bin/main.o bin/Agent.o bin/Coalition.o bin/Graph.o bin/Parser.o bin/Party.o bin/Simulation.o
 

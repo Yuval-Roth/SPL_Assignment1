@@ -4,13 +4,15 @@
 #include <list>
 using std::list;
 
-class Party;
+#include "Party.h"
+
+// class Party;
 
 class SelectionPolicy
 {
     public: 
 
-    virtual Party* selectParty(const list<Party*> &) const = 0; 
+    virtual Party* selectParty(list<Party*> &) = 0; 
 };
 
 // #endif
@@ -23,7 +25,7 @@ class EdgeWeightSelectionPolicy: public SelectionPolicy
     public:
 
     EdgeWeightSelectionPolicy();
-    Party* selectParty(const list<Party*>& party) const;  
+    Party* selectParty(list<Party*>& party);  
 };
 // #endif
 
@@ -35,6 +37,6 @@ class MandatesSelectionPolicy: public SelectionPolicy
     public:
 
     MandatesSelectionPolicy();
-    Party* selectParty(const list<Party*>& party) const;
+    Party* selectParty(list<Party*>& party);
 };
 #endif
