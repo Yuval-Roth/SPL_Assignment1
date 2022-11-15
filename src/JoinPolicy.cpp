@@ -1,5 +1,5 @@
 #include "../include/JoinPolicy.h"
-#include "../include/Coalition.h"
+
 
 
 MandatesJoinPolicy::MandatesJoinPolicy()

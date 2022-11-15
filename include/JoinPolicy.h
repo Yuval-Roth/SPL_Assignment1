@@ -1,17 +1,19 @@
 #ifndef JoinPolicy_h
 #define JoinPolicy_h
 
+#include "../include/Coalition.h"
+
 class JoinPolicy
  {
     public:
 
     virtual Coalition* selectCoalition(list<Coalition*> &)= 0;
 };
-#endif
+// #endif
 
 
-#ifndef MandatesJoinPolicy_h
-#define MandatesJoinPolicy_h
+// #ifndef MandatesJoinPolicy_h
+// #define MandatesJoinPolicy_h
 class MandatesJoinPolicy : public JoinPolicy 
 {
     public:
@@ -19,10 +21,10 @@ class MandatesJoinPolicy : public JoinPolicy
     MandatesJoinPolicy();
     Coalition* selectCoalition(list<Coalition*> &);
 };
-#endif
+// #endif
 
-#ifndef LastOfferJoinPolicy_h
-#define LastOfferJoinPolicy_h
+// #ifndef LastOfferJoinPolicy_h
+// #define LastOfferJoinPolicy_h
 class LastOfferJoinPolicy : public JoinPolicy
 {
     public:
