@@ -25,13 +25,13 @@ class Coalition
     //constructors
 
     Coalition(int);
-    Coalition(int,Agent&);
+    Coalition(int,const Agent&);
 
     //methods
 
     bool checkIfAlreadyProposed(int) const;
     void flagAsProposed(int);
-    void addParty(int,Agent ,Simulation&);
+    void addParty(int,Simulation&);
     const list<int>& getMembers() const;
     list<int>& getMembers();
     const int& getMandatesCount() const;

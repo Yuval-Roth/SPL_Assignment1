@@ -15,6 +15,7 @@ public:
     Agent() = default;
     Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy);
     Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy, Coalition* );
+    Agent(const Agent& other);
     int getPartyId() const;
     int getId() const;
     void step(Simulation &);

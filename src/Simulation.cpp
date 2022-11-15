@@ -8,7 +8,7 @@ mAgents(agents), coalitions(),CoalitionIdCounter(0),collectingOffersParties()
     {
         Coalition* coalition = new Coalition(CoalitionIdCounter++,agent);
         coalitions.push_back(coalition);
-        coalition->addParty(agent.getPartyId);
+        coalition->addParty(agent.getPartyId(),*this);
         agent.setCoalition(*coalition);
     }
 }
@@ -39,7 +39,7 @@ const Graph& Simulation::getGraph() const
     return mGraph;
 }
 
-Graph& Simulation::getGraph_non_const()
+Graph& Simulation::getGraph()
 {
     return mGraph;
 }
@@ -55,6 +55,10 @@ vector<Agent> &Simulation::getAgents()
 }
 
 const Party& Simulation::getParty(int partyId) const
+{
+    return mGraph.getParty(partyId);
+}
+Party& Simulation::getParty(int partyId)
 {
     return mGraph.getParty(partyId);
 }

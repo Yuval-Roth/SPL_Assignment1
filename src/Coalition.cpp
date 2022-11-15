@@ -9,7 +9,8 @@ Coalition::Coalition(int coalitionId,const Agent& agent) : Members(),Already_Pro
 }
 
 //This constructor creates an empty Agent_for_copying
-Coalition::Coalition(int coalitionId) : Coalition(coalitionId,const Agent()){}
+Coalition::Coalition(int coalitionId) : Members(),Already_Proposed(),CoalitionId(coalitionId)
+,mandatesCount(0),agent_for_copying(){}
 
 bool Coalition::checkIfAlreadyProposed(int partyId) const
 {
@@ -30,7 +31,7 @@ void Coalition::flagAsProposed(int partyId)
     Already_Proposed.push_front(partyId);
 }
 
-void Coalition::addParty(int partyId,Agent agent, Simulation& sim)
+void Coalition::addParty(int partyId, Simulation& sim)
 {
     //removing the party from already_proposed list
     std::_List_iterator<int> iter ;

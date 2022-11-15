@@ -22,6 +22,10 @@ Agent::Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy, Coaliti
 //This constructor sets the coalition to be NULL
 Agent::Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy) : Agent(agentId,partyId,selectionPolicy,NULL){}
 
+Agent::Agent(const Agent& other):Agent(other.mAgentId,other.mPartyId,other.mSelectionPolicy,other.coalition)
+{
+
+}
 
 int Agent::getId() const
 {
@@ -35,7 +39,7 @@ int Agent::getPartyId() const
 
 void Agent::step(Simulation &sim)
 {
-    Graph& graph = sim.getGraph_non_const();
+    Graph& graph = sim.getGraph();
     int pCount = graph.getNumVertices();
     list<Party*> partiesToPropose;
     for(int i = 0; i< pCount ; i++)
