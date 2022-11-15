@@ -3,27 +3,38 @@
 
 #include <list>
 #include "Party.h"
-
-using std::list;
+#include "Agent.h"
 
 class Coalition
 {
     private:
     
+    //fields
+
     list<int> Members;
     list<int> Already_Proposed;
-    
-
+    Agent agent_for_copying;
 
     public:
     
-    Coalition(int CoalitionId);
-    bool checkIfAlreadyProposed(int partyId) const;
-    void flagAsProposed(int partyId);
-    void addParty(int partyId);
-    const list<int>& getMembers() const;
+    //Fields
 
     const int CoalitionId;
+    int mandatesCount;
+
+    //constructors
+
+    Coalition(int);
+    Coalition(int,const Agent&);
+
+    //methods
+
+    bool checkIfAlreadyProposed(int) const;
+    void flagAsProposed(int);
+    void addParty(int,Simulation&);
+    const list<int>& getMembers() const;
+    list<int>& getMembers();
+    const int& getMandatesCount() const;
 
 };
 #endif

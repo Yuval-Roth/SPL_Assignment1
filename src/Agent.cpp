@@ -13,14 +13,19 @@ Agent::Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy, Coaliti
     // You can change the implementation of the constructor, but not the signature!
 }
 
+// Agent::Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy) : mAgentId(agentId), mPartyId(partyId)
+// ,mSelectionPolicy(selectionPolicy),alreadySet(false),coalition(NULL)
+// {
+//     // You can change the implementation of the constructor, but not the signature!
+// }
+
 //This constructor sets the coalition to be NULL
-Agent::Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy) : mAgentId(agentId), mPartyId(partyId)
-,mSelectionPolicy(selectionPolicy),alreadySet(false),coalition(NULL)
+Agent::Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy) : Agent(agentId,partyId,selectionPolicy,NULL){}
+
+Agent::Agent(const Agent& other):Agent(other.mAgentId,other.mPartyId,other.mSelectionPolicy,other.coalition)
 {
-    // You can change the implementation of the constructor, but not the signature!
+
 }
-
-
 
 int Agent::getId() const
 {
@@ -34,7 +39,7 @@ int Agent::getPartyId() const
 
 void Agent::step(Simulation &sim)
 {
-    Graph& graph = sim.getGraph_non_const();
+    Graph& graph = sim.getGraph();
     int pCount = graph.getNumVertices();
     list<Party*> partiesToPropose;
     for(int i = 0; i< pCount ; i++)
@@ -43,7 +48,7 @@ void Agent::step(Simulation &sim)
         {
             if(graph.getEdgeWeight(i,mPartyId) > 0)
             {
-                partiesToPropose.push_front(&(graph.getParty_non_const(i)));
+                partiesToPropose.push_front(&(graph.getParty(i)));
             }            
         }
     }
@@ -66,4 +71,8 @@ void Agent::setCoalition(Coalition& coalition)
 Coalition& Agent::getCoalition()
 {
     return *coalition;
+}
+SelectionPolicy* Agent::getSelectionPolicy()
+{
+    return mSelectionPolicy;
 }
