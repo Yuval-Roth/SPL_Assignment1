@@ -13,9 +13,9 @@ Coalition* MandatesJoinPolicy::selectCoalition(list<Coalition*>& coalition)
     Coalition* chosenCoalition = 0;
     
     for(Coalition* currCoalition : coalition){
-        if (currCoalition.getMandatesCount() > maxVal)
+        if (currCoalition->getMandatesCount() > maxVal)
         {
-            maxVal = currCoalition.getMandatesCount();
+            maxVal = currCoalition->getMandatesCount();
             chosenCoalition = currCoalition;
         }   
     }
