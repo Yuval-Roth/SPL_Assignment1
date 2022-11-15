@@ -6,7 +6,7 @@ mAgents(agents), coalitions(),CoalitionIdCounter(0),collectingOffersParties()
 {   
     for(Agent agent : mAgents)
     {
-        Coalition coalition = new Coalition(CoalitionIdCounter++);
+        Coalition* coalition = new Coalition(CoalitionIdCounter++);
         agent.setCoalition(*coalition);
         coalitions.push_back(coalition);
     }
@@ -15,12 +15,12 @@ mAgents(agents), coalitions(),CoalitionIdCounter(0),collectingOffersParties()
 void Simulation::step()
 {
     //parties step
-    for (int partyId : collectingOffersParties)
+    for (Party* party : collectingOffersParties)
     {
-        mGraph.getParty_non_const(partyId).step(*this);
+        party->step(*this);
     }
     //agents step
-    for(Agent agent : mAgents)
+    for(Agent& agent : mAgents)
     {
         agent.step(*this);
     }

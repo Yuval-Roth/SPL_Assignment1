@@ -1,6 +1,7 @@
 #include "../include/Party.h"
 #include "../include/Simulation.h"
 #include "../include/Graph.h"
+#include "../include/JoinPolicy.h"
 
 Party::Party(int id, string name, int mandates, JoinPolicy *jp) : mId(id), mName(name), mMandates(mandates), mJoinPolicy(jp), mState(Waiting) 
 {
@@ -37,20 +38,19 @@ const string & Party::getName() const
 void Party::step(Simulation &s)
 {
     // TODO: implement this method
-    const Graph& graph = s.getGraph();
+    Graph& graph = s.getGraph_non_const();
 
-    for(Party party: graph.mVertices){
-        if (party.getState() == State.CollectingsOffers)
+    if (mState == CollectingOffers)
+    {
+        if (timer == 3)
         {
-            if (party.timer == 3)
-            {
-                int chosenCoalitionID = mJoinPolicy.selectCoalition(party.offers);
-                s.getCoalition(chosenCoalitionID).addParty(party.getId());
-            }
-            else
-            {
-                party.timer++;
-            }
+            //Do not delete chosenCoalition
+            Coalition* chosenCoalition = mJoinPolicy->selectCoalition(offers);
+            chosenCoalition->addParty(mId);
+        }
+        else
+        {
+            timer++;
         }
     }
 }
