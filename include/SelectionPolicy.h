@@ -13,6 +13,7 @@ class SelectionPolicy
     public: 
 
     virtual Party* selectParty(list<Party*> &) = 0; 
+    virtual ~SelectionPolicy() {};
 };
 
 // #endif

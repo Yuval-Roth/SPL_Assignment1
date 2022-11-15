@@ -9,6 +9,7 @@ class JoinPolicy
     public:
 
     virtual Coalition* selectCoalition(list<Coalition*> &)= 0;
+    virtual ~JoinPolicy() {};
 };
 // #endif
 
@@ -21,6 +22,7 @@ class MandatesJoinPolicy : public JoinPolicy
 
     MandatesJoinPolicy();
     Coalition* selectCoalition(list<Coalition*> &);
+
 };
 // #endif
 

@@ -3,13 +3,16 @@
 #include "../include/Graph.h"
 #include "../include/JoinPolicy.h"
 
-Party::Party(int id, string name, int mandates, JoinPolicy *jp) : mId(id), mName(name), mMandates(mandates), mJoinPolicy(jp), mState(Waiting) 
+Party::Party(int id, string name, int mandates, JoinPolicy *jp) : mId(id), mName(name),
+ mMandates(mandates), mJoinPolicy(jp), mState(Waiting), timer(0), offers()
 {
     // You can change the implementation of the constructor, but not the signature!
 }
-Party::Party(const Party& other): mId(other.mId), mName(other.mName), mMandates(other.mMandates), mJoinPolicy(other.mJoinPolicy), mState(other.mState)
+
+Party::Party(const Party& other): mId(other.mId), mName(other.mName), mMandates(other.mMandates),
+ mJoinPolicy(other.mJoinPolicy), mState(other.mState), timer(other.timer), offers(other.offers)
 {
-    //TODO: Implement clone for the join policy
+    //TODO: Implement clone for the join policy and offers
 }
 Party& Party::operator=(const Party& other)
 {   
@@ -40,9 +43,6 @@ int Party::getId() const
 }
 void Party::step(Simulation &s)
 {
-    // TODO: implement this method
-    Graph& graph = s.getGraph_non_const();
-
     if (mState == CollectingOffers)
     {
         if (timer == 3)

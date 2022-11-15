@@ -6,16 +6,20 @@
 #include <list>
 using std::list;
 
-
-Agent::Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy) : mAgentId(agentId), mPartyId(partyId),mSelectionPolicy(selectionPolicy)
-{
-    // You can change the implementation of the constructor, but not the signature!
-}
-Agent::Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy, Coalition* coalition) : mAgentId(agentId), mPartyId(partyId),mSelectionPolicy(selectionPolicy),coalition(coalition)
+Agent::Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy, Coalition* coalition) : mAgentId(agentId),
+ mPartyId(partyId),mSelectionPolicy(selectionPolicy),alreadySet(false),coalition(coalition)
 
 {
     // You can change the implementation of the constructor, but not the signature!
 }
+
+//This constructor sets the coalition to be NULL
+Agent::Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy) : mAgentId(agentId), mPartyId(partyId)
+,mSelectionPolicy(selectionPolicy),alreadySet(false),coalition(NULL)
+{
+    // You can change the implementation of the constructor, but not the signature!
+}
+
 
 
 int Agent::getId() const
