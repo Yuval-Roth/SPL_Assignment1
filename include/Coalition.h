@@ -12,6 +12,7 @@ class Coalition
     
     list<int> Members;
     list<int> Already_Proposed;
+    
 
 
     public:
