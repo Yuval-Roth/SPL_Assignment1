@@ -19,7 +19,7 @@ Coalition* MandatesJoinPolicy::selectCoalition(list<Coalition*>& coalition)
             chosenCoalition = currCoalition;
         }   
     }
-    return chosenCoalition&;
+    return chosenCoalition;
 }
 
 
