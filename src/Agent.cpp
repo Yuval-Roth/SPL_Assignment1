@@ -1,6 +1,7 @@
 #include "../include/Agent.h"
 #include "../include/Simulation.h"
 #include "../include/SelectionPolicy.h"
+#include "../include/Party.h"
 #include <stdexcept>
 #include <list>
 using std::list;

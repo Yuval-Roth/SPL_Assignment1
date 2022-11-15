@@ -13,12 +13,10 @@ class SelectionPolicy
     virtual Party* selectParty(const list<Party*> &) const = 0; 
 };
 
-#endif
+// #endif
 
-#ifndef EdgeWeightSelectionPolicy_h
-#define EdgeWeightSelectionPolicy_h
-
-#include "SelectionPolicy.h"
+// #ifndef EdgeWeightSelectionPolicy_h
+// #define EdgeWeightSelectionPolicy_h
 
 class EdgeWeightSelectionPolicy: public SelectionPolicy
 {
@@ -27,12 +25,10 @@ class EdgeWeightSelectionPolicy: public SelectionPolicy
     EdgeWeightSelectionPolicy();
     Party* selectParty(const list<Party*>& party) const;  
 };
-#endif
+// #endif
 
-#ifndef MandatesSelectionPolicy_h
-#define MandatesSelectionPolicy_h 
-
-#include "SelectionPolicy.h"
+// #ifndef MandatesSelectionPolicy_h
+// #define MandatesSelectionPolicy_h 
 
 class MandatesSelectionPolicy: public SelectionPolicy
 {

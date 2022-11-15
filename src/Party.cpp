@@ -34,7 +34,10 @@ const string & Party::getName() const
 {
     return mName;
 }
-
+int Party::getId() const
+{
+    return mId;
+}
 void Party::step(Simulation &s)
 {
     // TODO: implement this method

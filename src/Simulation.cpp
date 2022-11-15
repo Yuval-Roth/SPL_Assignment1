@@ -38,6 +38,11 @@ const Graph& Simulation::getGraph() const
     return mGraph;
 }
 
+Graph& Simulation::getGraph_non_const()
+{
+    return mGraph;
+}
+
 const vector<Agent> &Simulation::getAgents() const
 {
     return mAgents;
@@ -50,9 +55,9 @@ const Party& Simulation::getParty(int partyId) const
 
 Coalition& Simulation::getCoalition(int coalitionId)
 {
-    std::_List_iterator<Coalition> iter ;
-    for (iter = coalitions.begin() ; iter->CoalitionId != coalitionId ; iter++){} 
-    return *iter;
+    std::_List_iterator<Coalition*> iter ;
+    for (iter = coalitions.begin() ; (*iter)->CoalitionId != coalitionId ; iter++){} 
+    return *(*iter);
 }
 
 /// This method returns a "coalition" vector, where each element is a vector of party IDs in the coalition.
@@ -65,7 +70,7 @@ const vector<vector<int>> Simulation::getPartiesByCoalitions() const
 
 Simulation::~Simulation()
 {
-    for(Coalition coalition : coalitions)
+    for(Coalition* coalition : coalitions)
     {
         delete coalition;
     }
