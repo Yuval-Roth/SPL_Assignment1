@@ -41,7 +41,7 @@ int Party::getId() const
 {
     return mId;
 }
-void Party::step(Simulation &s)
+void Party::step(Simulation &sim)
 {
     if (mState == CollectingOffers)
     {
@@ -49,7 +49,7 @@ void Party::step(Simulation &s)
         {
             //Do not delete chosenCoalition
             Coalition* chosenCoalition = mJoinPolicy->selectCoalition(offers);
-            chosenCoalition->addParty(mId);
+            chosenCoalition->addParty(mId, sim);
         }
         else
         {

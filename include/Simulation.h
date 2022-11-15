@@ -25,7 +25,9 @@ public:
     const Graph &getGraph() const;
     Graph &getGraph_non_const();
     const vector<Agent> &getAgents() const;
+    vector<Agent> &getAgents();
     const Party &getParty(int partyId) const;
+    Party &getParty(int partyId);
     const vector<vector<int>> getPartiesByCoalitions() const;
     Coalition& getCoalition(int coalitionId); 
     ~Simulation();
