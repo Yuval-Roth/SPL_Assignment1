@@ -6,10 +6,10 @@ mAgents(agents), coalitions(),CoalitionIdCounter(0),collectingOffersParties()
 {   
     for(Agent& agent : mAgents)
     {
-        Coalition* coalition = new Coalition(CoalitionIdCounter++,agent.getPartyId());
+        Coalition coalition = Coalition(CoalitionIdCounter++,agent.getPartyId());
         coalitions.push_back(coalition);
-        agent.setCoalition(*coalition);
-        coalition->setAgent_for_copying(agent);
+        agent.setCoalition(coalition);
+        coalition.setAgent_for_copying(agent);
     }
 }
 
@@ -68,9 +68,7 @@ Party& Simulation::getParty(int partyId)
 
 Coalition& Simulation::getCoalition(int coalitionId)
 {
-    std::_List_iterator<Coalition*> iter ;
-    for (iter = coalitions.begin() ; (*iter)->CoalitionId != coalitionId ; iter++){} 
-    return *(*iter);
+    return coalitions.at(coalitionId);
 }
 
 /// This method returns a "coalition" vector, where each element is a vector of party IDs in the coalition.
@@ -83,12 +81,4 @@ const vector<vector<int>> Simulation::getPartiesByCoalitions() const
 
 
     return vector<vector<int>>();
-}
-
-Simulation::~Simulation()
-{
-    for(Coalition* coalition : coalitions)
-    {
-        delete coalition;
-    }
 }
