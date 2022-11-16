@@ -6,26 +6,23 @@
 #include <list>
 using std::list;
 
+//constructors
+
 Agent::Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy, Coalition* coalition) : mAgentId(agentId),
- mPartyId(partyId),mSelectionPolicy(selectionPolicy),alreadySet(false),coalition(coalition)
+ mPartyId(partyId),mSelectionPolicy(selectionPolicy),alreadySet(false),coalition(coalition){}
 
-{
-    // You can change the implementation of the constructor, but not the signature!
-}
-
-// Agent::Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy) : mAgentId(agentId), mPartyId(partyId)
-// ,mSelectionPolicy(selectionPolicy),alreadySet(false),coalition(NULL)
-// {
-//     // You can change the implementation of the constructor, but not the signature!
-// }
-
-//This constructor sets the coalition to be NULL
 Agent::Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy) : Agent(agentId,partyId,selectionPolicy,NULL){}
 
-Agent::Agent(const Agent& other):Agent(other.mAgentId,other.mPartyId,other.mSelectionPolicy,other.coalition)
-{
+Agent::Agent(const Agent& other):Agent(other.mAgentId,other.mPartyId,other.mSelectionPolicy,other.coalition){}
 
+Agent::operator=(const Agent& other)
+{
+    mAgentId = other.mAgentId;
+    mPartyId = other.mPartyId;
+    mSelectionPolicy = other.mSelectionPolicy->clone();
 }
+
+//=========================================================================================================
 
 int Agent::getId() const
 {

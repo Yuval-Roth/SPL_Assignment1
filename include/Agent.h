@@ -12,23 +12,36 @@ class SelectionPolicy;
 class Agent
 {
 public:
+
+    //Constructors
+
+    Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy, Coalition* coalition);
+    //This constructor sets the coalition to be NULL
+    Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy); 
+    //Copy constructor
+    Agent(const Agent& other); 
+    //Assignment operator
+    Agent& operator=(const Agent& other); 
+
     Agent() = default;
-    Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy);
-    Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy, Coalition* );
-    Agent(const Agent& other);
+
+    //methods
+
     int getPartyId() const;
     int getId() const;
     void step(Simulation &);
     void setCoalition(Coalition&);
     Coalition& getCoalition();
     SelectionPolicy* getSelectionPolicy();
+    
 private:
+
+    //fields
+
     int mAgentId;
     int mPartyId;
     SelectionPolicy *mSelectionPolicy;
-    bool alreadySet;
-
-    //Do not delete coalition in this class
-    Coalition* coalition;
+    bool alreadySet;    
+    Coalition* coalition; //Do not delete coalition field in this class
 };
 #endif

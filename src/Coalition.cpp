@@ -3,10 +3,7 @@
 #include "../include/Agent.h"
 
 Coalition::Coalition(int coalitionId,const Agent& agent) : Members(),Already_Proposed(),agent_for_copying(agent),CoalitionId(coalitionId)
-,mandatesCount(0)
-{
-    
-}
+,mandatesCount(0){}
 
 //This constructor creates an empty Agent_for_copying
 Coalition::Coalition(int coalitionId) : Members(),Already_Proposed(),agent_for_copying(),CoalitionId(coalitionId)
