@@ -8,18 +8,23 @@ using std::list;
 
 //constructors
 
-Agent::Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy, Coalition* coalition) : mAgentId(agentId),
+Agent::Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy,bool alreadySet,Coalition* coalition) : mAgentId(agentId),
  mPartyId(partyId),mSelectionPolicy(selectionPolicy),alreadySet(false),coalition(coalition){}
 
-Agent::Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy) : Agent(agentId,partyId,selectionPolicy,NULL){}
+Agent::Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy, Coalition* coalition) : Agent(agentId,partyId,selectionPolicy,true,coalition){}
 
-Agent::Agent(const Agent& other):Agent(other.mAgentId,other.mPartyId,other.mSelectionPolicy,other.coalition){}
+Agent::Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy) : Agent(agentId,partyId,selectionPolicy,false,NULL){}
 
-Agent::operator=(const Agent& other)
+Agent::Agent(const Agent& other):Agent(other.mAgentId,other.mPartyId,other.mSelectionPolicy->clone(),other.alreadySet,other.coalition){}
+
+Agent& Agent::operator=(const Agent& other)
 {
     mAgentId = other.mAgentId;
     mPartyId = other.mPartyId;
     mSelectionPolicy = other.mSelectionPolicy->clone();
+    alreadySet = other.alreadySet;
+    coalition = other.coalition;
+    return *this;
 }
 
 //=========================================================================================================

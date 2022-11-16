@@ -15,6 +15,7 @@ public:
 
     //Constructors
 
+    
     Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy, Coalition* coalition);
     //This constructor sets the coalition to be NULL
     Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy); 
@@ -35,6 +36,10 @@ public:
     SelectionPolicy* getSelectionPolicy();
     
 private:
+
+    //constructors
+    
+    Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy,bool alreadySet,Coalition* coalition);
 
     //fields
 

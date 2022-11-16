@@ -27,7 +27,7 @@ class EdgeWeightSelectionPolicy: public SelectionPolicy
 {
     public:
 
-    EdgeWeightSelectionPolicy();
+    EdgeWeightSelectionPolicy() = default;
     SelectionPolicy* clone();
     Party* selectParty(list<Party*>& party);  
 };
@@ -40,7 +40,7 @@ class MandatesSelectionPolicy: public SelectionPolicy
 {
     public:
 
-    MandatesSelectionPolicy();
+    MandatesSelectionPolicy() = default;
     SelectionPolicy* clone();
     Party* selectParty(list<Party*>& party);
 };
