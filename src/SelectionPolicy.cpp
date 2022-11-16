@@ -22,3 +22,4 @@ Party* MandatesSelectionPolicy::selectParty(list<Party*>& party)
 {
     // TODO: Implement this method
     return new Party(0, "temp", 0,new MandatesJoinPolicy());
+}

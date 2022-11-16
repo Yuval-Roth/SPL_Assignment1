@@ -9,6 +9,7 @@ class JoinPolicy
     public:
 
     virtual Coalition* selectCoalition(list<Coalition*> &)= 0;
+    virtual JoinPolicy* clone() = 0;
     virtual ~JoinPolicy() {};
 };
 // #endif
@@ -20,7 +21,8 @@ class MandatesJoinPolicy : public JoinPolicy
 {
     public:
 
-    MandatesJoinPolicy();
+    MandatesJoinPolicy() = default;
+    JoinPolicy* clone();
     Coalition* selectCoalition(list<Coalition*> &);
 
 };
@@ -32,7 +34,8 @@ class LastOfferJoinPolicy : public JoinPolicy
 {
     public:
 
-    LastOfferJoinPolicy();
+    LastOfferJoinPolicy() = default;
+    JoinPolicy* clone();
     Coalition* selectCoalition(list<Coalition*> &);
 };
 #endif

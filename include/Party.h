@@ -24,20 +24,33 @@ class Coalition;
 class Party
 {
 public:
-    Party();
+
+    //constructors
+
     Party(int id, string name, int mandates, JoinPolicy * policy); 
+    //copy constructor
     Party(const Party&);
+    //assignment operator
     Party& operator=(const Party&);
+    
+    Party() = default;
+    //methods
+
+    void step(Simulation &s);
+    
+    const string &getName() const;
     State getState() const;
     void setState(State state);
     int getMandates() const;
-    void step(Simulation &s);
-    const string &getName() const;
     int getId() const;
+    
     void acceptOffer(Coalition&); //agent give the party an offer
 
     // ~Party();
 private:
+
+    //fields
+
     int mId;
     string mName;
     int mMandates;

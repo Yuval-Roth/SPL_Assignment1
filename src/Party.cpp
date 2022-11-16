@@ -10,12 +10,20 @@ Party::Party(int id, string name, int mandates, JoinPolicy *jp) : mId(id), mName
 }
 
 Party::Party(const Party& other): mId(other.mId), mName(other.mName), mMandates(other.mMandates),
- mJoinPolicy(other.mJoinPolicy), mState(other.mState), timer(other.timer), offers(other.offers)
+ mJoinPolicy(other.mJoinPolicy->clone()), mState(other.mState), timer(other.timer), offers(other.offers)
 {
     //TODO: Implement clone for the join policy and offers
 }
 Party& Party::operator=(const Party& other)
 {   
+    mId = other.mId;
+    mName = other.mName;
+    mMandates = other.mMandates;
+    mJoinPolicy = other.mJoinPolicy->clone();
+    mState = other.mState;
+    timer = other.timer;
+    offers = other.offers;
+
     return *this;
 }
 State Party::getState() const
