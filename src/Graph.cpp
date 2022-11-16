@@ -27,11 +27,5 @@ const Party &Graph::getParty(int partyId) const
 }
 Party &Graph::getParty(int partyId)
 {
-
     return mVertices[partyId];
-    // if(partyId > getNumVertices()) throw std::runtime_error("invalid partyId");
-
-    // std::_List_iterator<Party> iter ;
-    // for (iter = mVertices.begin() ; iter->getId() != partyId ; iter++){ }
-    // return *iter;
 }

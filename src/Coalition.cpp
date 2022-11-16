@@ -12,14 +12,14 @@ Coalition::Coalition(int coalitionId) : Members(),Already_Proposed(),agent_for_c
 bool Coalition::checkIfAlreadyProposed(int partyId) const
 {
     std::_List_const_iterator<int> iter ;
-    for (iter = Already_Proposed.begin() ; iter != Already_Proposed.end() ; iter++)
-    {
-        if(*iter == partyId) return true;
-    }
     for (iter = Members.begin() ; iter != Members.end() ; iter++)
     {
         if(*iter == partyId) return true;
     } 
+    for (iter = Already_Proposed.begin() ; iter != Already_Proposed.end() ; iter++)
+    {
+        if(*iter == partyId) return true;
+    }
     return false;
 }
 

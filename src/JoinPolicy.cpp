@@ -27,5 +27,10 @@ JoinPolicy* LastOfferJoinPolicy::clone()
 }
 Coalition* LastOfferJoinPolicy::selectCoalition(list<Coalition*>& coalition) //assumes the last offer in list[0]
 {
+
+    
+    //TODO: Implement this method
+
+
     return new Coalition(0);
 }

@@ -30,7 +30,10 @@ void Simulation::step()
 
 bool Simulation::shouldTerminate() const
 {
+
     // TODO implement this method
+
+    
     return true;
 }
 
@@ -74,7 +77,11 @@ Coalition& Simulation::getCoalition(int coalitionId)
 /// At the simulation initialization - the result will be [[agent0.partyId], [agent1.partyId], ...]
 const vector<vector<int>> Simulation::getPartiesByCoalitions() const
 {
+
+
     // TODO: you MUST implement this method for getting proper output, read the documentation above.
+
+
     return vector<vector<int>>();
 }
 

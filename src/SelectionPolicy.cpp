@@ -8,11 +8,12 @@ SelectionPolicy* EdgeWeightSelectionPolicy::clone()
 }
 Party* EdgeWeightSelectionPolicy::selectParty(list<Party*> & party)
 {
+
     // TODO: Implement this method
+
+    
     return new Party(0, "temp", 0,new MandatesJoinPolicy());
 }
-
-
 
 SelectionPolicy* MandatesSelectionPolicy::clone()
 {
@@ -20,6 +21,9 @@ SelectionPolicy* MandatesSelectionPolicy::clone()
 }
 Party* MandatesSelectionPolicy::selectParty(list<Party*>& party)
 {
+
     // TODO: Implement this method
+
+
     return new Party(0, "temp", 0,new MandatesJoinPolicy());
 }
