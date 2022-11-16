@@ -62,7 +62,7 @@ const int& Coalition::getMandatesCount() const
     return mandatesCount;
 }
 
-void Coalition::setAgent(const Agent& other)
+void Coalition::setAgent_for_copying(const Agent& other)
 {
     agent_for_copying = other;
 }

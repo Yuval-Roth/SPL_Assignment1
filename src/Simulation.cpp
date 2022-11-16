@@ -9,7 +9,7 @@ mAgents(agents), coalitions(),CoalitionIdCounter(0),collectingOffersParties()
         Coalition* coalition = new Coalition(CoalitionIdCounter++,agent.getPartyId());
         coalitions.push_back(coalition);
         agent.setCoalition(*coalition);
-        coalition->setAgent(agent);
+        coalition->setAgent_for_copying(agent);
     }
 }
 

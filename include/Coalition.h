@@ -35,7 +35,7 @@ class Coalition
     const list<int>& getMembers() const;
     list<int>& getMembers();
     const int& getMandatesCount() const;
-    void setAgent(const Agent& other);
+    void setAgent_for_copying(const Agent& other);
 
 };
 #endif
