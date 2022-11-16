@@ -4,12 +4,12 @@
 Simulation::Simulation(Graph graph, vector<Agent> agents) : mGraph(graph),
 mAgents(agents), coalitions(),CoalitionIdCounter(0),collectingOffersParties() 
 {   
-    for(Agent agent : mAgents)
+    for(Agent& agent : mAgents)
     {
-        Coalition* coalition = new Coalition(CoalitionIdCounter++,agent);
+        Coalition* coalition = new Coalition(CoalitionIdCounter++,agent.getPartyId());
         coalitions.push_back(coalition);
-        coalition->addParty(agent.getPartyId(),*this);
         agent.setCoalition(*coalition);
+        coalition->setAgent(agent);
     }
 }
 

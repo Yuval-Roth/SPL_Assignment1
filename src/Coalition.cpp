@@ -2,8 +2,11 @@
 #include "../include/Simulation.h"
 #include "../include/Agent.h"
 
-Coalition::Coalition(int coalitionId,const Agent& agent) : Members(),Already_Proposed(),agent_for_copying(agent),CoalitionId(coalitionId)
-,mandatesCount(0){}
+Coalition::Coalition(int coalitionId,int firstParty) : Members(),Already_Proposed(),agent_for_copying(),CoalitionId(coalitionId)
+,mandatesCount(0)
+{
+    Members.push_front(firstParty);
+}
 
 //This constructor creates an empty Agent_for_copying
 Coalition::Coalition(int coalitionId) : Members(),Already_Proposed(),agent_for_copying(),CoalitionId(coalitionId)
@@ -57,4 +60,9 @@ const list<int>& Coalition::getMembers() const
 const int& Coalition::getMandatesCount() const
 {
     return mandatesCount;
+}
+
+void Coalition::setAgent(const Agent& other)
+{
+    agent_for_copying = other;
 }

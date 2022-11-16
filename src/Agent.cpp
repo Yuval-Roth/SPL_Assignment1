@@ -9,7 +9,7 @@ using std::list;
 //constructors
 
 Agent::Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy,bool alreadySet,Coalition* coalition) : mAgentId(agentId),
- mPartyId(partyId),mSelectionPolicy(selectionPolicy),alreadySet(false),coalition(coalition){}
+ mPartyId(partyId),mSelectionPolicy(selectionPolicy),alreadySet(alreadySet),coalition(coalition){}
 
 Agent::Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy, Coalition* coalition) : Agent(agentId,partyId,selectionPolicy,true,coalition){}
 
@@ -46,12 +46,9 @@ void Agent::step(Simulation &sim)
     list<Party*> partiesToPropose;
     for(int i = 0; i< pCount ; i++)
     {
-        if(i != mPartyId && coalition->checkIfAlreadyProposed(i))
+        if(i != mPartyId && graph.getEdgeWeight(i,mPartyId) > 0 && coalition->checkIfAlreadyProposed(i))
         {
-            if(graph.getEdgeWeight(i,mPartyId) > 0)
-            {
-                partiesToPropose.push_front(&(graph.getParty(i)));
-            }            
+            partiesToPropose.push_front(&(graph.getParty(i)));         
         }
     }
 
