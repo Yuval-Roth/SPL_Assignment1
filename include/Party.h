@@ -46,7 +46,7 @@ public:
     
     void acceptOffer(Coalition&); //agent give the party an offer
 
-    // ~Party();
+    ~Party();
 private:
 
     //fields

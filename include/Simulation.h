@@ -35,6 +35,7 @@ public:
 private:
     Graph mGraph;
     vector<Agent> mAgents;
+    //All coalitions in this list need to be deleted
     list<Coalition*> coalitions;
     int CoalitionIdCounter;
     list<Party*> collectingOffersParties;

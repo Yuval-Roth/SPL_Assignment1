@@ -70,7 +70,7 @@ void Party::acceptOffer(Coalition& coalition)
 {
     //TODO: Implement this method
 }
-// Party::~Party()
-// {
-//     delete mJoinPolicy;
-// }
+Party::~Party()
+{
+    delete mJoinPolicy;
+}

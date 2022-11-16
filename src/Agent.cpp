@@ -78,3 +78,7 @@ SelectionPolicy* Agent::getSelectionPolicy()
 {
     return mSelectionPolicy;
 }
+Agent::~Agent()
+{
+    delete mSelectionPolicy;
+}

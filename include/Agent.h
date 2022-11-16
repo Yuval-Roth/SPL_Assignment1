@@ -34,6 +34,8 @@ public:
     void setCoalition(Coalition&);
     Coalition& getCoalition();
     SelectionPolicy* getSelectionPolicy();
+
+    ~Agent();
     
 private:
 

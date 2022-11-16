@@ -24,7 +24,7 @@ class MandatesJoinPolicy : public JoinPolicy
     MandatesJoinPolicy() = default;
     JoinPolicy* clone();
     Coalition* selectCoalition(list<Coalition*> &);
-
+    ~MandatesJoinPolicy() = default;
 };
 // #endif
 
@@ -37,5 +37,6 @@ class LastOfferJoinPolicy : public JoinPolicy
     LastOfferJoinPolicy() = default;
     JoinPolicy* clone();
     Coalition* selectCoalition(list<Coalition*> &);
+    ~LastOfferJoinPolicy() = default;
 };
 #endif
