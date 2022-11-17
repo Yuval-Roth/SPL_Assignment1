@@ -2,7 +2,7 @@
 #include "../include/Graph.h"
 
 Simulation::Simulation(Graph graph, vector<Agent> agents) : mGraph(graph),
-mAgents(agents), coalitions(),CoalitionIdCounter(0),collectingOffersParties() 
+mAgents(agents), coalitions(),CoalitionIdCounter(0),collectingOffersParties(),joinedParties(mAgents.size())
 {   
     for(Agent& agent : mAgents)
     {
@@ -30,11 +30,7 @@ void Simulation::step()
 
 bool Simulation::shouldTerminate() const
 {
-
-    // TODO implement this method
-
-    
-    return true;
+    return joinedParties == mGraph.getNumVertices();
 }
 
 const Graph& Simulation::getGraph() const
@@ -70,6 +66,10 @@ Coalition& Simulation::getCoalition(int coalitionId)
 {
     return coalitions.at(coalitionId);
 }
+void Simulation::announceJoined()
+{
+    joinedParties++;
+}
 
 /// This method returns a "coalition" vector, where each element is a vector of party IDs in the coalition.
 /// At the simulation initialization - the result will be [[agent0.partyId], [agent1.partyId], ...]
@@ -79,6 +79,7 @@ const vector<vector<int>> Simulation::getPartiesByCoalitions() const
 
     for(const Coalition& coalition : coalitions)
     {
+        output.push_back(vector<int>());
         for(int member : coalition.getMembers())
         {
             output[coalition.CoalitionId].push_back(member);

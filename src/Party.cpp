@@ -57,6 +57,7 @@ void Party::step(Simulation &sim)
             //Do not delete chosenCoalition
             Coalition* chosenCoalition = mJoinPolicy->selectCoalition(offers);
             chosenCoalition->addParty(mId, sim);
+            sim.announceJoined();
         }
         else
         {

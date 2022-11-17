@@ -30,6 +30,7 @@ public:
     Party &getParty(int partyId);
     const vector<vector<int>> getPartiesByCoalitions() const;
     Coalition& getCoalition(int coalitionId); 
+    void announceJoined();
     
     ~Simulation() = default;
 
@@ -41,5 +42,6 @@ private:
 
     //Do not delete the parties in this list
     list<Party*> collectingOffersParties;
+    int joinedParties;
 };
 #endif
