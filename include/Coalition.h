@@ -24,8 +24,8 @@ class Coalition
 
     //constructors
 
-    Coalition(int);
-    Coalition(int,const Agent&);
+    Coalition(int coalitionId);
+    Coalition(int coalitionId,int firstParty);
 
     //methods
 
@@ -35,6 +35,7 @@ class Coalition
     const list<int>& getMembers() const;
     list<int>& getMembers();
     const int& getMandatesCount() const;
+    void setAgent_for_copying(const Agent& other);
 
 };
 #endif

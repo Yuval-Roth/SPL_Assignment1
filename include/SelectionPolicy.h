@@ -12,8 +12,10 @@ class SelectionPolicy
 {
     public: 
 
+    virtual SelectionPolicy* clone()=0;
     virtual Party* selectParty(list<Party*> &) = 0; 
     virtual ~SelectionPolicy() {};
+
 };
 
 // #endif
@@ -25,7 +27,8 @@ class EdgeWeightSelectionPolicy: public SelectionPolicy
 {
     public:
 
-    EdgeWeightSelectionPolicy();
+    EdgeWeightSelectionPolicy() = default;
+    SelectionPolicy* clone();
     Party* selectParty(list<Party*>& party);  
 };
 // #endif
@@ -37,7 +40,8 @@ class MandatesSelectionPolicy: public SelectionPolicy
 {
     public:
 
-    MandatesSelectionPolicy();
+    MandatesSelectionPolicy() = default;
+    SelectionPolicy* clone();
     Party* selectParty(list<Party*>& party);
 };
 #endif

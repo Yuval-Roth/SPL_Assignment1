@@ -1,24 +1,21 @@
 #include "../include/SelectionPolicy.h"
 #include "../include/JoinPolicy.h"
 
-
-
-EdgeWeightSelectionPolicy::EdgeWeightSelectionPolicy()
+SelectionPolicy* EdgeWeightSelectionPolicy::clone()
 {
-    
+    return new EdgeWeightSelectionPolicy();
 }
 
-Party* EdgeWeightSelectionPolicy::selectParty(list<Party*> & party, Graph graph)
+Party* EdgeWeightSelectionPolicy::selectParty(list<Party*> & parties, Graph graph, int partyId)
 {
-    // TODO: Implement this method
     Graph& graph = graph;
     int maxVal = 0;
     Party* chosenParty = 0;
 
-    for(Party* currParty : party ){
-        if (graph.getEdgeWeight(currParty->getId , agent.getId()) > maxVal) 
+    for(Party* currParty : parties ){
+        if (graph.getEdgeWeight(currParty->getId (), partyId)> maxVal) 
         {
-            maxVal = graph.getEdgeWeight(currParty->getId , agent.getId());
+            maxVal = graph.getEdgeWeight(currParty->getId() , partyId);
             chosenParty = currParty;
         }
         
@@ -26,20 +23,16 @@ Party* EdgeWeightSelectionPolicy::selectParty(list<Party*> & party, Graph graph)
     return chosenParty;
 }
 
-
-
-MandatesSelectionPolicy::MandatesSelectionPolicy()
+SelectionPolicy* MandatesSelectionPolicy::clone()
 {
-    
+    return new MandatesSelectionPolicy();
 }
-
-Party* MandatesSelectionPolicy::selectParty(list<Party*>& party)
+Party* MandatesSelectionPolicy::selectParty(list<Party*>& parties)
 {
-    // TODO: Implement this method
     int maxVal = 0;
     Party* chosenParty = 0;
     
-    for(Party* currParty : party){
+    for(Party* currParty : parties){
         if (currParty->getMandates() > maxVal)
         {
             maxVal = currParty->getMandates();

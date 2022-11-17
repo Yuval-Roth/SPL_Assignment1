@@ -2,14 +2,14 @@
 #include "../include/Graph.h"
 
 Simulation::Simulation(Graph graph, vector<Agent> agents) : mGraph(graph),
-mAgents(agents), coalitions(),CoalitionIdCounter(0),collectingOffersParties() 
+mAgents(agents), coalitions(),CoalitionIdCounter(0),collectingOffersParties(),joinedParties(mAgents.size())
 {   
-    for(Agent agent : mAgents)
+    for(Agent& agent : mAgents)
     {
-        Coalition* coalition = new Coalition(CoalitionIdCounter++,agent);
+        Coalition coalition = Coalition(CoalitionIdCounter++,agent.getPartyId());
         coalitions.push_back(coalition);
-        coalition->addParty(agent.getPartyId(),*this);
-        agent.setCoalition(*coalition);
+        agent.setCoalition(coalition);
+        coalition.setAgent_for_copying(agent);
     }
 }
 
@@ -30,8 +30,7 @@ void Simulation::step()
 
 bool Simulation::shouldTerminate() const
 {
-    // TODO implement this method
-    return true;
+    return joinedParties == mGraph.getNumVertices();
 }
 
 const Graph& Simulation::getGraph() const
@@ -65,23 +64,26 @@ Party& Simulation::getParty(int partyId)
 
 Coalition& Simulation::getCoalition(int coalitionId)
 {
-    std::_List_iterator<Coalition*> iter ;
-    for (iter = coalitions.begin() ; (*iter)->CoalitionId != coalitionId ; iter++){} 
-    return *(*iter);
+    return coalitions.at(coalitionId);
+}
+void Simulation::announceJoined()
+{
+    joinedParties++;
 }
 
 /// This method returns a "coalition" vector, where each element is a vector of party IDs in the coalition.
 /// At the simulation initialization - the result will be [[agent0.partyId], [agent1.partyId], ...]
 const vector<vector<int>> Simulation::getPartiesByCoalitions() const
 {
-    // TODO: you MUST implement this method for getting proper output, read the documentation above.
-    return vector<vector<int>>();
-}
+    auto output = vector<vector<int>>();
 
-Simulation::~Simulation()
-{
-    for(Coalition* coalition : coalitions)
+    for(const Coalition& coalition : coalitions)
     {
-        delete coalition;
-    }
+        output.push_back(vector<int>());
+        for(int member : coalition.getMembers())
+        {
+            output[coalition.CoalitionId].push_back(member);
+        }
+    }   
+    return output;
 }

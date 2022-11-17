@@ -2,27 +2,27 @@
 #include "../include/Simulation.h"
 #include "../include/Agent.h"
 
-Coalition::Coalition(int coalitionId,const Agent& agent) : Members(),Already_Proposed(),CoalitionId(coalitionId)
-,mandatesCount(0),agent_for_copying(agent)
+Coalition::Coalition(int coalitionId,int firstParty) : Members(),Already_Proposed(),agent_for_copying(),CoalitionId(coalitionId)
+,mandatesCount(0)
 {
-    
+    Members.push_front(firstParty);
 }
 
 //This constructor creates an empty Agent_for_copying
-Coalition::Coalition(int coalitionId) : Members(),Already_Proposed(),CoalitionId(coalitionId)
-,mandatesCount(0),agent_for_copying(){}
+Coalition::Coalition(int coalitionId) : Members(),Already_Proposed(),agent_for_copying(),CoalitionId(coalitionId)
+,mandatesCount(0){}
 
 bool Coalition::checkIfAlreadyProposed(int partyId) const
 {
     std::_List_const_iterator<int> iter ;
-    for (iter = Already_Proposed.begin() ; iter != Already_Proposed.end() ; iter++)
-    {
-        if(*iter == partyId) return true;
-    }
     for (iter = Members.begin() ; iter != Members.end() ; iter++)
     {
         if(*iter == partyId) return true;
     } 
+    for (iter = Already_Proposed.begin() ; iter != Already_Proposed.end() ; iter++)
+    {
+        if(*iter == partyId) return true;
+    }
     return false;
 }
 
@@ -60,4 +60,9 @@ const list<int>& Coalition::getMembers() const
 const int& Coalition::getMandatesCount() const
 {
     return mandatesCount;
+}
+
+void Coalition::setAgent_for_copying(const Agent& other)
+{
+    agent_for_copying = other;
 }

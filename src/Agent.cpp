@@ -6,26 +6,48 @@
 #include <list>
 using std::list;
 
-Agent::Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy, Coalition* coalition) : mAgentId(agentId),
- mPartyId(partyId),mSelectionPolicy(selectionPolicy),alreadySet(false),coalition(coalition)
+//constructors
 
+Agent::Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy,bool alreadySet,Coalition* coalition) : mAgentId(agentId),
+ mPartyId(partyId),mSelectionPolicy(selectionPolicy),alreadySet(alreadySet),coalition(coalition){}
+
+Agent::Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy, Coalition* coalition) : Agent(agentId,partyId,selectionPolicy,true,coalition){}
+
+Agent::Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy) : Agent(agentId,partyId,selectionPolicy,false,NULL){}
+
+Agent::Agent(const Agent& other):Agent(other.mAgentId,other.mPartyId,other.mSelectionPolicy->clone(),other.alreadySet,other.coalition){}
+
+Agent& Agent::operator=(const Agent& other)
 {
-    // You can change the implementation of the constructor, but not the signature!
+    mAgentId = other.mAgentId;
+    mPartyId = other.mPartyId;
+    mSelectionPolicy = other.mSelectionPolicy->clone();
+    alreadySet = other.alreadySet;
+    coalition = other.coalition;
+    return *this;
 }
 
-// Agent::Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy) : mAgentId(agentId), mPartyId(partyId)
-// ,mSelectionPolicy(selectionPolicy),alreadySet(false),coalition(NULL)
-// {
-//     // You can change the implementation of the constructor, but not the signature!
-// }
-
-//This constructor sets the coalition to be NULL
-Agent::Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy) : Agent(agentId,partyId,selectionPolicy,NULL){}
-
-Agent::Agent(const Agent& other):Agent(other.mAgentId,other.mPartyId,other.mSelectionPolicy,other.coalition)
+Agent::Agent(Agent&& rvalue) : Agent(rvalue.mAgentId,rvalue.mPartyId,rvalue.mSelectionPolicy,rvalue.alreadySet,rvalue.coalition)
 {
-
+    rvalue.mSelectionPolicy = NULL;
+    rvalue.coalition = NULL;
 }
+Agent& Agent::operator=(Agent&& rvalue)
+{
+    mAgentId = rvalue.mAgentId;
+    mPartyId = rvalue.mPartyId;
+    mSelectionPolicy = rvalue.mSelectionPolicy;
+    alreadySet = rvalue.alreadySet;
+    coalition = rvalue.coalition;
+    
+    rvalue.mSelectionPolicy = NULL;
+    rvalue.coalition = NULL;
+
+    return *this;
+}
+
+
+//=========================================================================================================
 
 int Agent::getId() const
 {
@@ -44,12 +66,9 @@ void Agent::step(Simulation &sim)
     list<Party*> partiesToPropose;
     for(int i = 0; i< pCount ; i++)
     {
-        if(i != mPartyId && coalition->checkIfAlreadyProposed(i))
+        if(i != mPartyId && graph.getEdgeWeight(i,mPartyId) > 0 && coalition->checkIfAlreadyProposed(i))
         {
-            if(graph.getEdgeWeight(i,mPartyId) > 0)
-            {
-                partiesToPropose.push_front(&(graph.getParty(i)));
-            }            
+            partiesToPropose.push_front(&(graph.getParty(i)));         
         }
     }
 
@@ -77,4 +96,8 @@ Coalition& Agent::getCoalition()
 SelectionPolicy* Agent::getSelectionPolicy()
 {
     return mSelectionPolicy;
+}
+Agent::~Agent()
+{
+    delete mSelectionPolicy;
 }

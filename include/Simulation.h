@@ -30,14 +30,18 @@ public:
     Party &getParty(int partyId);
     const vector<vector<int>> getPartiesByCoalitions() const;
     Coalition& getCoalition(int coalitionId); 
-    ~Simulation();
+    void announceJoined();
+    
+    ~Simulation() = default;
 
 private:
     Graph mGraph;
     vector<Agent> mAgents;
-    list<Coalition*> coalitions;
+    vector<Coalition> coalitions;
     int CoalitionIdCounter;
+
+    //Do not delete the parties in this list
     list<Party*> collectingOffersParties;
-    // Party* parties;
+    int joinedParties;
 };
 #endif

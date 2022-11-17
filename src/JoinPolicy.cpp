@@ -1,13 +1,12 @@
 #include "../include/JoinPolicy.h"
 
 
-
-MandatesJoinPolicy::MandatesJoinPolicy()
+JoinPolicy* MandatesJoinPolicy::clone()
 {
-
+    return new MandatesJoinPolicy();
 }
 
-Coalition* MandatesJoinPolicy::selectCoalition(list<Coalition*>& coalition)
+Coalition* MandatesJoinPolicy::selectCoalition(list<Coalition*>& coalition, Graph& graph)
 {
     int maxVal = 0;
     Coalition* chosenCoalition = 0;
@@ -22,12 +21,16 @@ Coalition* MandatesJoinPolicy::selectCoalition(list<Coalition*>& coalition)
     return chosenCoalition;
 }
 
-
-LastOfferJoinPolicy::LastOfferJoinPolicy()
+JoinPolicy* LastOfferJoinPolicy::clone()
 {
-    
+    return new LastOfferJoinPolicy();
 }
-Coalition* LastOfferJoinPolicy::selectCoalition(list<Coalition*>& coalition ) //assumes the last offer in list[0]
+Coalition* LastOfferJoinPolicy::selectCoalition(list<Coalition*>& coalition , Graph& graph) //assumes the last offer in list[0]
 {
+
+    
+    //TODO: Implement this method
+
+
     return new Coalition(0);
 }
