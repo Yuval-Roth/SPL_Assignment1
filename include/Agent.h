@@ -17,13 +17,11 @@ public:
 
     
     Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy, Coalition* coalition);
-    //This constructor sets the coalition to be NULL
     Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy); 
-    //Copy constructor
     Agent(const Agent& other); 
-    //Assignment operator
-    Agent& operator=(const Agent& other); 
-
+    Agent& operator=(const Agent& other);
+    Agent(Agent&& rvalue);
+    Agent& operator=(Agent&& other);
     Agent() = default;
 
     //methods

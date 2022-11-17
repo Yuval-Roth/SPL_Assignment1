@@ -27,6 +27,24 @@ Agent& Agent::operator=(const Agent& other)
     return *this;
 }
 
+Agent::Agent(Agent&& rvalue) : Agent(rvalue.mAgentId,rvalue.mPartyId,rvalue.mSelectionPolicy,rvalue.alreadySet,rvalue.coalition)
+{
+    rvalue.mSelectionPolicy = NULL;
+    rvalue.coalition = NULL;
+}
+Agent& Agent::operator=(Agent&& rvalue)
+{
+    mAgentId = rvalue.mAgentId;
+    mPartyId = rvalue.mPartyId;
+    mSelectionPolicy = rvalue.mSelectionPolicy;
+    alreadySet = rvalue.alreadySet;
+    coalition = rvalue.coalition;
+    
+    rvalue.mSelectionPolicy = NULL;
+    rvalue.coalition = NULL;
+}
+
+
 //=========================================================================================================
 
 int Agent::getId() const
