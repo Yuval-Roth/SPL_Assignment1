@@ -6,7 +6,15 @@
             "command": "make",
             "options": {
                 "cwd": "${workspaceFolder}"
-            },
+            },            
+        },
+        {
+            "type": "shell",
+            "label": "valgrind",
+            "command": "valgrind --leak-check=yes --log-file=valgrind.rpt bin/cRace tests/01.json",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },            
         }
     ],
     "version": "2.0.0"
