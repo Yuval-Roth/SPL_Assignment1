@@ -6,9 +6,8 @@ SelectionPolicy* EdgeWeightSelectionPolicy::clone()
     return new EdgeWeightSelectionPolicy();
 }
 
-Party* EdgeWeightSelectionPolicy::selectParty(list<Party*> & parties, Graph graph, int partyId)
+Party* EdgeWeightSelectionPolicy::selectParty(list<Party*> & parties, Graph& graph, int partyId)
 {
-    Graph& graph = graph;
     int maxVal = 0;
     Party* chosenParty = 0;
 
@@ -27,7 +26,7 @@ SelectionPolicy* MandatesSelectionPolicy::clone()
 {
     return new MandatesSelectionPolicy();
 }
-Party* MandatesSelectionPolicy::selectParty(list<Party*>& parties, Graph graph, int partyId)
+Party* MandatesSelectionPolicy::selectParty(list<Party*>& parties, Graph& graph, int partyId)
 {
     int maxVal = 0;
     Party* chosenParty = 0;

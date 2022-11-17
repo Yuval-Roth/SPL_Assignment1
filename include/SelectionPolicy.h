@@ -6,14 +6,14 @@ using std::list;
 
 #include "Party.h"
 
-// class Party;
+class Graph;
 
 class SelectionPolicy
 {
     public: 
 
     virtual SelectionPolicy* clone()=0;
-    virtual Party* selectParty(list<Party*>& party, Graph graph, int partyId) = 0; 
+    virtual Party* selectParty(list<Party*>& party, Graph& graph, int partyId) = 0; 
     virtual ~SelectionPolicy() {};
 
 };
@@ -29,7 +29,7 @@ class EdgeWeightSelectionPolicy: public SelectionPolicy
 
     EdgeWeightSelectionPolicy() = default;
     SelectionPolicy* clone();
-    Party* selectParty(list<Party*>& party, Graph graph, int partyId);  
+    Party* selectParty(list<Party*>& party, Graph& graph, int partyId);  
 };
 // #endif
 
@@ -42,6 +42,6 @@ class MandatesSelectionPolicy: public SelectionPolicy
 
     MandatesSelectionPolicy() = default;
     SelectionPolicy* clone();
-    Party* selectParty(list<Party*>& party, Graph graph, int partyId);
+    Party* selectParty(list<Party*>& party, Graph& graph, int partyId);
 };
 #endif
