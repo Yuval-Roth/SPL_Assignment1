@@ -67,10 +67,7 @@ void Party::step(Simulation &sim)
 
 void Party::acceptOffer(Coalition& coalition)
 {
-
-    //TODO: Implement this method
-
-    
+    offers.push_front(&coalition);    
 }
 
 Party::~Party()

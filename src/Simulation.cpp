@@ -75,10 +75,14 @@ Coalition& Simulation::getCoalition(int coalitionId)
 /// At the simulation initialization - the result will be [[agent0.partyId], [agent1.partyId], ...]
 const vector<vector<int>> Simulation::getPartiesByCoalitions() const
 {
+    auto output = vector<vector<int>>();
 
-
-    // TODO: you MUST implement this method for getting proper output, read the documentation above.
-
-
-    return vector<vector<int>>();
+    for(const Coalition& coalition : coalitions)
+    {
+        for(int member : coalition.getMembers())
+        {
+            output[coalition.CoalitionId].push_back(member);
+        }
+    }   
+    return output;
 }
