@@ -66,3 +66,4 @@ void Party::acceptOffer(Coalition& coalition)
 // {
 //     delete mJoinPolicy;
 // }
+

@@ -27,7 +27,7 @@ LastOfferJoinPolicy::LastOfferJoinPolicy()
 {
     
 }
-Coalition* LastOfferJoinPolicy::selectCoalition(list<Coalition*>& coalition) //assumes the last offer in list[0]
+Coalition* LastOfferJoinPolicy::selectCoalition(list<Coalition*>& coalition ) //assumes the last offer in list[0]
 {
     return new Coalition(0);
 }

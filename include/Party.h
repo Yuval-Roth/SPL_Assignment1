@@ -35,6 +35,7 @@ public:
     const string &getName() const;
     int getId() const;
     void acceptOffer(Coalition&); //agent give the party an offer
+    
 
     // ~Party();
 private:

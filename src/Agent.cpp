@@ -68,10 +68,12 @@ void Agent::setCoalition(Coalition& coalition)
     }
     else throw std::runtime_error("Cannot change coalitions once they are set");
 }
+
 Coalition& Agent::getCoalition()
 {
     return *coalition;
 }
+
 SelectionPolicy* Agent::getSelectionPolicy()
 {
     return mSelectionPolicy;
