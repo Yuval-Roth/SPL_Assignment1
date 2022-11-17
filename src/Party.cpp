@@ -72,7 +72,7 @@ void Party::step(Simulation &sim)
         if (timer == 3)
         {
             //Do not delete chosenCoalition
-            Coalition* chosenCoalition = mJoinPolicy->selectCoalition(offers);
+            Coalition* chosenCoalition = mJoinPolicy->selectCoalition(offers,sim.getGraph());
             chosenCoalition->addParty(mId, sim);
             sim.announceJoined();
             mState = State::Joined;

@@ -73,7 +73,7 @@ void Agent::step(Simulation &sim)
     }
 
     //Do not delete toPropose
-    Party* toPropose = mSelectionPolicy -> selectParty(partiesToPropose);
+    Party* toPropose = mSelectionPolicy -> selectParty(partiesToPropose,sim.getGraph(),mPartyId);
     toPropose->acceptOffer(*coalition);
     coalition->flagAsProposed(toPropose->getId());
 }

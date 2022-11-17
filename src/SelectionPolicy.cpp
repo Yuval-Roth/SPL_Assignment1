@@ -27,7 +27,7 @@ SelectionPolicy* MandatesSelectionPolicy::clone()
 {
     return new MandatesSelectionPolicy();
 }
-Party* MandatesSelectionPolicy::selectParty(list<Party*>& parties)
+Party* MandatesSelectionPolicy::selectParty(list<Party*>& parties, Graph graph, int partyId)
 {
     int maxVal = 0;
     Party* chosenParty = 0;
