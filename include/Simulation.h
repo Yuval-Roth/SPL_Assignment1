@@ -31,8 +31,6 @@ public:
     const vector<vector<int>> getPartiesByCoalitions() const;
     Coalition& getCoalition(int coalitionId); 
     void announceJoined();
-    
-    ~Simulation() = default;
 
 private:
     Graph mGraph;

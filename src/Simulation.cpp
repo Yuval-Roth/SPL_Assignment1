@@ -6,10 +6,10 @@ mAgents(agents), coalitions(),CoalitionIdCounter(0),collectingOffersParties(),jo
 {   
     for(Agent& agent : mAgents)
     {
-        Coalition coalition = Coalition(CoalitionIdCounter++,agent.getPartyId());
-        coalitions.push_back(coalition);
+        Coalition coalition = Coalition(CoalitionIdCounter++,mGraph.getParty(agent.getId()));
         agent.setCoalition(coalition);
         coalition.setAgent_for_copying(agent);
+        coalitions.push_back(coalition);
     }
 }
 

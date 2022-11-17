@@ -19,13 +19,15 @@ class Coalition
     
     //Fields
 
-    const int CoalitionId;
+    int CoalitionId;
     int mandatesCount;
 
     //constructors
 
     Coalition(int coalitionId);
-    Coalition(int coalitionId,int firstParty);
+    Coalition(int coalitionId,Party& firstParty);
+    // Coalition(const Coalition& other);
+    // Coalition& operator=(const Coalition& other);
 
     //methods
 

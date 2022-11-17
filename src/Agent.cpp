@@ -15,7 +15,17 @@ Agent::Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy, Coaliti
 
 Agent::Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy) : Agent(agentId,partyId,selectionPolicy,false,NULL){}
 
-Agent::Agent(const Agent& other):Agent(other.mAgentId,other.mPartyId,other.mSelectionPolicy->clone(),other.alreadySet,other.coalition){}
+Agent::Agent(const Agent& other):mAgentId(other.mAgentId),mPartyId(other.mPartyId),alreadySet(other.alreadySet),coalition(other.coalition)
+{
+    // mAgentId = other.mAgentId;
+    // mPartyId = other.mPartyId;
+    // if(mSelectionPolicy != NULL) 
+    mSelectionPolicy = other.mSelectionPolicy->clone();
+    // alreadySet = other.alreadySet;
+    // if(coalition != NULL) coalition = other.coalition;
+
+
+}
 
 Agent& Agent::operator=(const Agent& other)
 {
@@ -27,24 +37,24 @@ Agent& Agent::operator=(const Agent& other)
     return *this;
 }
 
-Agent::Agent(Agent&& rvalue) : Agent(rvalue.mAgentId,rvalue.mPartyId,rvalue.mSelectionPolicy,rvalue.alreadySet,rvalue.coalition)
-{
-    rvalue.mSelectionPolicy = NULL;
-    rvalue.coalition = NULL;
-}
-Agent& Agent::operator=(Agent&& rvalue)
-{
-    mAgentId = rvalue.mAgentId;
-    mPartyId = rvalue.mPartyId;
-    mSelectionPolicy = rvalue.mSelectionPolicy;
-    alreadySet = rvalue.alreadySet;
-    coalition = rvalue.coalition;
+// Agent::Agent(Agent&& rvalue) : Agent(rvalue.mAgentId,rvalue.mPartyId,rvalue.mSelectionPolicy,rvalue.alreadySet,rvalue.coalition)
+// {
+//     rvalue.mSelectionPolicy = NULL;
+//     rvalue.coalition = NULL;
+// }
+// Agent& Agent::operator=(Agent&& rvalue)
+// {
+//     mAgentId = rvalue.mAgentId;
+//     mPartyId = rvalue.mPartyId;
+//     mSelectionPolicy = rvalue.mSelectionPolicy;
+//     alreadySet = rvalue.alreadySet;
+//     coalition = rvalue.coalition;
     
-    rvalue.mSelectionPolicy = NULL;
-    rvalue.coalition = NULL;
+//     rvalue.mSelectionPolicy = NULL;
+//     rvalue.coalition = NULL;
 
-    return *this;
-}
+//     return *this;
+// }
 
 
 //=========================================================================================================
@@ -80,7 +90,7 @@ void Agent::step(Simulation &sim)
 
 void Agent::setCoalition(Coalition& coalition)
 {
-    if(not alreadySet)
+    if(alreadySet == false)
     {
         this->coalition = &coalition;
         alreadySet = true;

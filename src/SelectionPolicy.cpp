@@ -1,7 +1,7 @@
 #include "../include/SelectionPolicy.h"
 #include "../include/JoinPolicy.h"
 
-SelectionPolicy* EdgeWeightSelectionPolicy::clone()
+SelectionPolicy* EdgeWeightSelectionPolicy::clone() const
 {
     return new EdgeWeightSelectionPolicy();
 }
@@ -22,7 +22,7 @@ Party* EdgeWeightSelectionPolicy::selectParty(list<Party*> & parties, Graph& gra
     return chosenParty;
 }
 
-SelectionPolicy* MandatesSelectionPolicy::clone()
+SelectionPolicy* MandatesSelectionPolicy::clone() const
 {
     return new MandatesSelectionPolicy();
 }
