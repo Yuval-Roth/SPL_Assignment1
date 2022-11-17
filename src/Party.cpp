@@ -58,6 +58,7 @@ void Party::step(Simulation &sim)
             Coalition* chosenCoalition = mJoinPolicy->selectCoalition(offers);
             chosenCoalition->addParty(mId, sim);
             sim.announceJoined();
+            mState = State::Joined;
         }
         else
         {
@@ -68,6 +69,7 @@ void Party::step(Simulation &sim)
 
 void Party::acceptOffer(Coalition& coalition)
 {
+    if(mState == State::Waiting) mState = State::Waiting;
     offers.push_front(&coalition);    
 }
 
