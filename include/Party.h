@@ -28,12 +28,14 @@ public:
     //constructors
 
     Party(int id, string name, int mandates, JoinPolicy * policy); 
-    //copy constructor
     Party(const Party&);
-    //assignment operator
     Party& operator=(const Party&);
-    
+    Party(Party&& rvalue);
+    Party& operator=(Party&& rvalue);
     Party() = default;
+
+
+
     //methods
 
     void step(Simulation &s);

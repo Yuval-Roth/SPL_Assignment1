@@ -23,6 +23,23 @@ Party& Party::operator=(const Party& other)
 
     return *this;
 }
+
+Party::Party(Party&& rvalue) : Party(rvalue.mId,rvalue.mName,rvalue.mMandates,rvalue.mJoinPolicy)
+{
+    rvalue.mJoinPolicy = NULL;
+}
+
+Party& Party::operator=(Party&& rvalue)
+{
+    mId = rvalue.mId;
+    mName = rvalue.mName;
+    mMandates = rvalue.mMandates;
+    mJoinPolicy = rvalue.mJoinPolicy;
+
+    rvalue.mJoinPolicy = NULL;
+    return *this;
+}
+
 //======================================================================
 
 State Party::getState() const

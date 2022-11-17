@@ -42,6 +42,8 @@ Agent& Agent::operator=(Agent&& rvalue)
     
     rvalue.mSelectionPolicy = NULL;
     rvalue.coalition = NULL;
+
+    return *this;
 }
 
 
