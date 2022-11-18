@@ -1,5 +1,6 @@
 #include "../include/Coalition.h"
 #include "../include/Simulation.h"
+#include "../include/SelectionPolicy.h"
 
 Coalition::Coalition(int coalitionId,Party& firstParty) : Members(),Already_Proposed(1,-1),agent_for_copying(),CoalitionId(coalitionId)
 ,mandatesCount(0)
@@ -63,7 +64,7 @@ void Coalition::addParty(int partyId, Simulation& sim)
     Members.push_front(partyId);
     mandatesCount += toAdd.getMandates();
     int newAgentId = sim.getAgents().size();
-    sim.getAgents().push_back(Agent(newAgentId,partyId,agent_for_copying.getSelectionPolicy(),this));
+    sim.getAgents().push_back(Agent(newAgentId,partyId,agent_for_copying.getSelectionPolicy()->clone(),this));
 }
 
 const list<int>& Coalition::getMembers() const
