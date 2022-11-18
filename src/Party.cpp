@@ -90,7 +90,7 @@ void Party::acceptOffer(Coalition& coalition,Simulation& sim)
     if(mState == State::Waiting)
     {
         mState = State::CollectingOffers;
-        sim.collectingOffersParties.push_front(this);
+        sim.getCollectingOffersParties().push_front(this);
     } 
     offers.push_front(&coalition);    
 }

@@ -2,7 +2,7 @@
 #include "../include/Graph.h"
 
 Simulation::Simulation(Graph graph, vector<Agent> agents) : mGraph(graph),
-mAgents(agents), coalitions(),collectingOffersParties(),CoalitionIdCounter(0),joinedParties(mAgents.size())
+mAgents(agents), coalitions(),CoalitionIdCounter(0),collectingOffersParties(),joinedParties(mAgents.size())
 {   
     for(Agent& agent : mAgents)
     {
@@ -19,7 +19,7 @@ void Simulation::step()
     //parties step
     std::list<Party*>::iterator iter;
     iter = collectingOffersParties.begin();
-    while (collectingOffersParties.empty() == false & iter != collectingOffersParties.end())
+    while ((collectingOffersParties.empty() == false) & (iter != collectingOffersParties.end()))
     {
         Party* current = (*iter);
         auto temp = iter++;
@@ -96,6 +96,11 @@ const vector<vector<int>> Simulation::getPartiesByCoalitions() const
     }   
     return output;
 }
+list<Party*>& Simulation::getCollectingOffersParties()
+{
+    return collectingOffersParties;
+}
+
 Simulation::~Simulation()
 {
     for(Coalition* coal : coalitions)

@@ -31,8 +31,8 @@ public:
     const vector<vector<int>> getPartiesByCoalitions() const;
     Coalition& getCoalition(int coalitionId); 
     void announceJoined();
+    list<Party*>& getCollectingOffersParties();
     ~Simulation();
-    list<Party*> collectingOffersParties;
 
 private:
     Graph mGraph;
@@ -41,6 +41,7 @@ private:
     int CoalitionIdCounter;
 
     //Do not delete the parties in this list
+    list<Party*> collectingOffersParties;
     int joinedParties;
 };
 #endif
