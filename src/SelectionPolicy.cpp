@@ -12,12 +12,20 @@ Party* EdgeWeightSelectionPolicy::selectParty(list<Party*> & parties, Graph& gra
     Party* chosenParty = 0;
 
     for(Party* currParty : parties ){
-        if (graph.getEdgeWeight(currParty->getId (), partyId) > maxVal) 
+        int eWeight = graph.getEdgeWeight(currParty->getId (), partyId);
+        if (eWeight >= maxVal) 
         {
-            maxVal = graph.getEdgeWeight(currParty->getId() , partyId);
-            chosenParty = currParty;
-        }
-        
+            if(eWeight == maxVal)
+            {
+                if(eWeight > graph.getEdgeWeight(chosenParty->getId (), partyId))
+                    chosenParty = currParty;    
+            }
+            else
+            {
+                maxVal = graph.getEdgeWeight(currParty->getId() , partyId);
+                chosenParty = currParty;
+            }         
+        }     
     }
     return chosenParty;
 }

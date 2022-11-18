@@ -12,7 +12,7 @@ Coalition* MandatesJoinPolicy::selectCoalition(list<Coalition*>& coalition, Grap
     Coalition* chosenCoalition = 0;
     
     for(Coalition* currCoalition : coalition){
-        if (currCoalition->getMandatesCount() > maxVal)
+        if (currCoalition->getMandatesCount() >= maxVal)
         {
             maxVal = currCoalition->getMandatesCount();
             chosenCoalition = currCoalition;
