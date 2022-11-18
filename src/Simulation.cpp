@@ -39,7 +39,12 @@ void Simulation::step()
 
 bool Simulation::shouldTerminate() const
 {
-    return joinedParties == mGraph.getNumVertices();
+    if (joinedParties == mGraph.getNumVertices()) return true;
+    for(Coalition* coalition : coalitions)
+    {
+        if(coalition->getMandatesCount() >= 61) return true;
+    }
+    return false;
 }
 
 const Graph& Simulation::getGraph() const

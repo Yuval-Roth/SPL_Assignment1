@@ -6,7 +6,7 @@
 //constructors
 
 Party::Party(int id, string name, int mandates, JoinPolicy *jp) : mId(id), mName(name),
- mMandates(mandates), mJoinPolicy(jp), mState(Waiting), timer(0), offers(){}
+ mMandates(mandates), mJoinPolicy(jp), mState(Waiting), timer(1), offers(){}
 
 Party::Party(const Party& other): mId(other.mId), mName(other.mName), mMandates(other.mMandates),
  mJoinPolicy(other.mJoinPolicy->clone()), mState(other.mState), timer(other.timer), offers(other.offers){}
