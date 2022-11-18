@@ -11,7 +11,7 @@
         {
             "type": "shell",
             "label": "valgrind",
-            "command": "valgrind --leak-check=yes --log-file=valgrind.rpt bin/cRace tests/01.json",
+            "command": "valgrind --leak-check=yes --log-file=valgrind.rpt bin/cRace tests/03.json",
             "options": {
                 "cwd": "${workspaceFolder}"
             },            

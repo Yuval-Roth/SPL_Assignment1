@@ -56,7 +56,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/bin/cRace",
-            "args": ["tests/01.json"],
+            "args": ["tests/03.json"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
@@ -74,7 +74,7 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "make",
+            // "preLaunchTask": "make",
             "postDebugTask": "valgrind",
             "miDebuggerPath": "/usr/bin/gdb"
         }
