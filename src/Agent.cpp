@@ -15,46 +15,37 @@ Agent::Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy, Coaliti
 
 Agent::Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy) : Agent(agentId,partyId,selectionPolicy,false,NULL){}
 
-Agent::Agent(const Agent& other):mAgentId(other.mAgentId),mPartyId(other.mPartyId),alreadySet(other.alreadySet),coalition(other.coalition)
-{
-    // mAgentId = other.mAgentId;
-    // mPartyId = other.mPartyId;
-    // if(mSelectionPolicy != NULL) 
-    mSelectionPolicy = other.mSelectionPolicy->clone();
-    // alreadySet = other.alreadySet;
-    // if(coalition != NULL) coalition = other.coalition;
-
-
-}
+Agent::Agent(const Agent& other):mAgentId(other.mAgentId),mPartyId(other.mPartyId),mSelectionPolicy(other.mSelectionPolicy->clone()),alreadySet(other.alreadySet),coalition(other.coalition){}
 
 Agent& Agent::operator=(const Agent& other)
 {
     mAgentId = other.mAgentId;
     mPartyId = other.mPartyId;
-    mSelectionPolicy = other.mSelectionPolicy->clone();
+    if(other.mSelectionPolicy != NULL)
+        mSelectionPolicy = other.mSelectionPolicy->clone();
     alreadySet = other.alreadySet;
     coalition = other.coalition;
     return *this;
 }
 
-// Agent::Agent(Agent&& rvalue) : Agent(rvalue.mAgentId,rvalue.mPartyId,rvalue.mSelectionPolicy,rvalue.alreadySet,rvalue.coalition)
-// {
-//     rvalue.mSelectionPolicy = NULL;
-//     rvalue.coalition = NULL;
-// }
-// Agent& Agent::operator=(Agent&& rvalue)
-// {
-//     mAgentId = rvalue.mAgentId;
-//     mPartyId = rvalue.mPartyId;
-//     mSelectionPolicy = rvalue.mSelectionPolicy;
-//     alreadySet = rvalue.alreadySet;
-//     coalition = rvalue.coalition;
+Agent::Agent(Agent&& rvalue) : Agent(rvalue.mAgentId,rvalue.mPartyId,rvalue.mSelectionPolicy,rvalue.alreadySet,rvalue.coalition)
+{
+    rvalue.mSelectionPolicy = NULL;
+    rvalue.coalition = NULL;
+}
+Agent& Agent::operator=(Agent&& rvalue)
+{
+    mAgentId = rvalue.mAgentId;
+    mPartyId = rvalue.mPartyId;
+    mSelectionPolicy = rvalue.mSelectionPolicy;
+    alreadySet = rvalue.alreadySet;
+    coalition = rvalue.coalition;
     
-//     rvalue.mSelectionPolicy = NULL;
-//     rvalue.coalition = NULL;
+    rvalue.mSelectionPolicy = NULL;
+    rvalue.coalition = NULL;
 
-//     return *this;
-// }
+    return *this;
+}
 
 
 //=========================================================================================================
@@ -76,16 +67,18 @@ void Agent::step(Simulation &sim)
     list<Party*> partiesToPropose;
     for(int i = 0; i< pCount ; i++)
     {
-        if(i != mPartyId && graph.getEdgeWeight(i,mPartyId) > 0 && coalition->checkIfAlreadyProposed(i))
+        if(i != mPartyId && graph.getEdgeWeight(i,mPartyId) > 0 && coalition->checkIfAlreadyProposed(i) == false)
         {
             partiesToPropose.push_front(&(graph.getParty(i)));         
         }
     }
-
-    //Do not delete toPropose
-    Party* toPropose = mSelectionPolicy -> selectParty(partiesToPropose,sim.getGraph(),mPartyId);
-    toPropose->acceptOffer(*coalition);
-    coalition->flagAsProposed(toPropose->getId());
+    if(partiesToPropose.empty() == false)
+    {
+        //Do not delete toPropose
+        Party* toPropose = mSelectionPolicy -> selectParty(partiesToPropose,sim.getGraph(),mPartyId);
+        toPropose->acceptOffer(*coalition,sim);
+        coalition->flagAsProposed(toPropose->getId());
+    }
 }
 
 void Agent::setCoalition(Coalition& coalition)

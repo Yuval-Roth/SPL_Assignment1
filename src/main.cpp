@@ -31,18 +31,4 @@ int main(int argc, char **argv)
     outputFile << std::setw(4) << json(outPerIter) << endl;
 
     return 0;
-    
-
-    // std::list<int> listOfInts;
-    // // Push back 10 elements in the list
-    // for (int i = 0; i < 10; i++)
-    //     listOfInts.push_back(i);
-    // // Iterate over the list and display numbers
-    // for (int val : listOfInts)
-    //     std::cout << val << ",";
-    // std::cout << std::endl;
-    // return 0;
-
-
-
 }

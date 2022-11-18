@@ -2,23 +2,32 @@
 #include "../include/Graph.h"
 
 Simulation::Simulation(Graph graph, vector<Agent> agents) : mGraph(graph),
-mAgents(agents), coalitions(),CoalitionIdCounter(0),collectingOffersParties(),joinedParties(mAgents.size())
+mAgents(agents), coalitions(),collectingOffersParties(),CoalitionIdCounter(0),joinedParties(mAgents.size())
 {   
     for(Agent& agent : mAgents)
     {
-        Coalition coalition = Coalition(CoalitionIdCounter++,mGraph.getParty(agent.getId()));
-        agent.setCoalition(coalition);
-        coalition.setAgent_for_copying(agent);
+        Coalition* coalition = new Coalition(CoalitionIdCounter++,mGraph.getParty(agent.getPartyId()));
+        agent.setCoalition(*coalition);
+        coalition->setAgent_for_copying(agent);
         coalitions.push_back(coalition);
     }
 }
 
 void Simulation::step()
 {
+
     //parties step
-    for (Party* party : collectingOffersParties)
+    std::list<Party*>::iterator iter;
+    iter = collectingOffersParties.begin();
+    while (collectingOffersParties.empty() == false & iter != collectingOffersParties.end())
     {
-        party->step(*this);
+        Party* current = (*iter);
+        auto temp = iter++;
+        if(current->getState() == State::Joined)
+        {
+            collectingOffersParties.erase(temp);
+        }        
+        else current->step(*this);      
     }
     //agents step
     for(Agent& agent : mAgents)
@@ -64,7 +73,7 @@ Party& Simulation::getParty(int partyId)
 
 Coalition& Simulation::getCoalition(int coalitionId)
 {
-    return coalitions.at(coalitionId);
+    return *coalitions.at(coalitionId);
 }
 void Simulation::announceJoined()
 {
@@ -77,13 +86,20 @@ const vector<vector<int>> Simulation::getPartiesByCoalitions() const
 {
     auto output = vector<vector<int>>();
 
-    for(const Coalition& coalition : coalitions)
+    for(const Coalition* coalition : coalitions)
     {
         output.push_back(vector<int>());
-        for(int member : coalition.getMembers())
+        for(int member : coalition->getMembers())
         {
-            output[coalition.CoalitionId].push_back(member);
+            output[coalition->CoalitionId].push_back(member);
         }
     }   
     return output;
+}
+Simulation::~Simulation()
+{
+    for(Coalition* coal : coalitions)
+    {
+        delete coal;
+    }
 }

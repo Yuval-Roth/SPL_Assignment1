@@ -12,28 +12,30 @@ Coalition::Coalition(int coalitionId,Party& firstParty) : Members(),Already_Prop
 Coalition::Coalition(int coalitionId) : Members(),Already_Proposed(),agent_for_copying(),CoalitionId(coalitionId)
 ,mandatesCount(0){}
 
-// Coalition::Coalition(const Coalition& other):Members(other.Members),Already_Proposed(other.Already_Proposed),
-// agent_for_copying(other.agent_for_copying),CoalitionId(other.CoalitionId),mandatesCount(other.mandatesCount){}
+Coalition::Coalition(const Coalition& other):Members(other.Members),Already_Proposed(other.Already_Proposed),
+agent_for_copying(other.agent_for_copying),CoalitionId(other.CoalitionId),mandatesCount(other.mandatesCount){}
 
-// Coalition& Coalition::operator=(const Coalition& other)
-// {
-//     Members = other.Members;
-//     Already_Proposed = other.Already_Proposed;
-//     agent_for_copying = other.agent_for_copying;
-//     CoalitionId = other.CoalitionId;
-//     mandatesCount = other.mandatesCount;
-//     return *this;
-// }
+Coalition& Coalition::operator=(const Coalition& other)
+{
+    Members = other.Members;
+    Already_Proposed = other.Already_Proposed;
+    agent_for_copying = other.agent_for_copying;
+    CoalitionId = other.CoalitionId;
+    mandatesCount = other.mandatesCount;
+    return *this;
+}
 
 bool Coalition::checkIfAlreadyProposed(int partyId) const
 {
     for(int id : Members)
     {
-        if(id == partyId) return true;    
+        if(id == partyId)
+         return true;    
     }
     for(int id : Already_Proposed)
     {
-        if(id == partyId) return true;    
+        if(id == partyId)
+         return true;    
     }
     return false;
 }

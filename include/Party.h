@@ -46,7 +46,7 @@ public:
     int getMandates() const;
     int getId() const;
     
-    void acceptOffer(Coalition&); //agent give the party an offer
+    void acceptOffer(Coalition&,Simulation&); //agent give the party an offer
     
 
     ~Party();

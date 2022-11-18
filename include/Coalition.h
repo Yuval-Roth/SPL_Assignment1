@@ -26,8 +26,8 @@ class Coalition
 
     Coalition(int coalitionId);
     Coalition(int coalitionId,Party& firstParty);
-    // Coalition(const Coalition& other);
-    // Coalition& operator=(const Coalition& other);
+    Coalition(const Coalition& other);
+    Coalition& operator=(const Coalition& other);
 
     //methods
 
