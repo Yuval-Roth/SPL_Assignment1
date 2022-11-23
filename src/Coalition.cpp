@@ -64,7 +64,7 @@ void Coalition::addParty(int partyId, Simulation& sim)
     Members.push_back(partyId);
     mandatesCount += toAdd.getMandates();
     int newAgentId = sim.getAgents().size();
-    sim.getAgents().push_back(Agent(newAgentId,partyId,agent_for_copying.getSelectionPolicy(),this));
+    sim.getAgents().push_back(Agent(newAgentId,partyId,agent_for_copying.getSelectionPolicy()->clone(),this));
 }
 
 const list<int>& Coalition::getMembers() const
