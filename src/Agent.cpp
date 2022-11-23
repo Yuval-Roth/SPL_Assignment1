@@ -37,6 +37,7 @@ Agent& Agent::operator=(Agent&& rvalue)
 {
     mAgentId = rvalue.mAgentId;
     mPartyId = rvalue.mPartyId;
+    delete mSelectionPolicy;
     mSelectionPolicy = rvalue.mSelectionPolicy;
     alreadySet = rvalue.alreadySet;
     coalition = rvalue.coalition;

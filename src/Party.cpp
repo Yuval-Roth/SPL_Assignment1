@@ -34,6 +34,7 @@ Party& Party::operator=(Party&& rvalue)
     mId = rvalue.mId;
     mName = rvalue.mName;
     mMandates = rvalue.mMandates;
+    delete mJoinPolicy;
     mJoinPolicy = rvalue.mJoinPolicy;
 
     rvalue.mJoinPolicy = NULL;
