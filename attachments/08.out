@@ -1,0 +1,2603 @@
+[
+    {
+        "agents": [
+            {
+                "id": 0,
+                "partyId": 0
+            },
+            {
+                "id": 1,
+                "partyId": 4
+            }
+        ],
+        "coalitions": [
+            {
+                "mandates": 15,
+                "parties": [
+                    0
+                ]
+            },
+            {
+                "mandates": 10,
+                "parties": [
+                    4
+                ]
+            }
+        ],
+        "edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 1
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 3
+            },
+            {
+                "from": 0,
+                "to": 4,
+                "weight": 3
+            },
+            {
+                "from": 0,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 0,
+                "to": 6,
+                "weight": 3
+            },
+            {
+                "from": 0,
+                "to": 7,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 0,
+                "weight": 1
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 5
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 3
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 5,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 6,
+                "weight": 3
+            },
+            {
+                "from": 1,
+                "to": 7,
+                "weight": 3
+            },
+            {
+                "from": 2,
+                "to": 0,
+                "weight": 2
+            },
+            {
+                "from": 2,
+                "to": 1,
+                "weight": 5
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 4
+            },
+            {
+                "from": 2,
+                "to": 4,
+                "weight": 2
+            },
+            {
+                "from": 2,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 2,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 2,
+                "to": 7,
+                "weight": 4
+            },
+            {
+                "from": 3,
+                "to": 0,
+                "weight": 3
+            },
+            {
+                "from": 3,
+                "to": 1,
+                "weight": 3
+            },
+            {
+                "from": 3,
+                "to": 2,
+                "weight": 4
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 3
+            },
+            {
+                "from": 3,
+                "to": 5,
+                "weight": 4
+            },
+            {
+                "from": 3,
+                "to": 6,
+                "weight": 4
+            },
+            {
+                "from": 3,
+                "to": 7,
+                "weight": 3
+            },
+            {
+                "from": 4,
+                "to": 0,
+                "weight": 3
+            },
+            {
+                "from": 4,
+                "to": 1,
+                "weight": 2
+            },
+            {
+                "from": 4,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 4,
+                "to": 3,
+                "weight": 3
+            },
+            {
+                "from": 4,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 4,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 4,
+                "to": 7,
+                "weight": 2
+            },
+            {
+                "from": 5,
+                "to": 0,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 1,
+                "weight": 2
+            },
+            {
+                "from": 5,
+                "to": 2,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 3,
+                "weight": 4
+            },
+            {
+                "from": 5,
+                "to": 4,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 5,
+                "weight": 2
+            },
+            {
+                "from": 5,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 7,
+                "weight": 2
+            },
+            {
+                "from": 6,
+                "to": 0,
+                "weight": 3
+            },
+            {
+                "from": 6,
+                "to": 1,
+                "weight": 3
+            },
+            {
+                "from": 6,
+                "to": 2,
+                "weight": 1
+            },
+            {
+                "from": 6,
+                "to": 3,
+                "weight": 4
+            },
+            {
+                "from": 6,
+                "to": 4,
+                "weight": 1
+            },
+            {
+                "from": 6,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 6,
+                "to": 7,
+                "weight": 3
+            },
+            {
+                "from": 7,
+                "to": 0,
+                "weight": 2
+            },
+            {
+                "from": 7,
+                "to": 1,
+                "weight": 3
+            },
+            {
+                "from": 7,
+                "to": 2,
+                "weight": 4
+            },
+            {
+                "from": 7,
+                "to": 3,
+                "weight": 3
+            },
+            {
+                "from": 7,
+                "to": 4,
+                "weight": 2
+            },
+            {
+                "from": 7,
+                "to": 5,
+                "weight": 2
+            },
+            {
+                "from": 7,
+                "to": 6,
+                "weight": 3
+            }
+        ],
+        "parties": [
+            {
+                "id": 0,
+                "mandates": 15,
+                "name": "Bulbasaur",
+                "state": "Joined"
+            },
+            {
+                "id": 1,
+                "mandates": 15,
+                "name": "Charmander",
+                "state": "Waiting"
+            },
+            {
+                "id": 2,
+                "mandates": 15,
+                "name": "Squirtle",
+                "state": "Waiting"
+            },
+            {
+                "id": 3,
+                "mandates": 15,
+                "name": "Pikachu",
+                "state": "Waiting"
+            },
+            {
+                "id": 4,
+                "mandates": 10,
+                "name": "Eevee",
+                "state": "Joined"
+            },
+            {
+                "id": 5,
+                "mandates": 20,
+                "name": "Snorlax",
+                "state": "Waiting"
+            },
+            {
+                "id": 6,
+                "mandates": 15,
+                "name": "Mew",
+                "state": "Waiting"
+            },
+            {
+                "id": 7,
+                "mandates": 15,
+                "name": "Mewtwo",
+                "state": "Waiting"
+            }
+        ]
+    },
+    {
+        "agents": [
+            {
+                "id": 0,
+                "partyId": 0
+            },
+            {
+                "id": 1,
+                "partyId": 4
+            }
+        ],
+        "coalitions": [
+            {
+                "mandates": 15,
+                "parties": [
+                    0
+                ]
+            },
+            {
+                "mandates": 10,
+                "parties": [
+                    4
+                ]
+            }
+        ],
+        "edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 1
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 3
+            },
+            {
+                "from": 0,
+                "to": 4,
+                "weight": 3
+            },
+            {
+                "from": 0,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 0,
+                "to": 6,
+                "weight": 3
+            },
+            {
+                "from": 0,
+                "to": 7,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 0,
+                "weight": 1
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 5
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 3
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 5,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 6,
+                "weight": 3
+            },
+            {
+                "from": 1,
+                "to": 7,
+                "weight": 3
+            },
+            {
+                "from": 2,
+                "to": 0,
+                "weight": 2
+            },
+            {
+                "from": 2,
+                "to": 1,
+                "weight": 5
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 4
+            },
+            {
+                "from": 2,
+                "to": 4,
+                "weight": 2
+            },
+            {
+                "from": 2,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 2,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 2,
+                "to": 7,
+                "weight": 4
+            },
+            {
+                "from": 3,
+                "to": 0,
+                "weight": 3
+            },
+            {
+                "from": 3,
+                "to": 1,
+                "weight": 3
+            },
+            {
+                "from": 3,
+                "to": 2,
+                "weight": 4
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 3
+            },
+            {
+                "from": 3,
+                "to": 5,
+                "weight": 4
+            },
+            {
+                "from": 3,
+                "to": 6,
+                "weight": 4
+            },
+            {
+                "from": 3,
+                "to": 7,
+                "weight": 3
+            },
+            {
+                "from": 4,
+                "to": 0,
+                "weight": 3
+            },
+            {
+                "from": 4,
+                "to": 1,
+                "weight": 2
+            },
+            {
+                "from": 4,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 4,
+                "to": 3,
+                "weight": 3
+            },
+            {
+                "from": 4,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 4,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 4,
+                "to": 7,
+                "weight": 2
+            },
+            {
+                "from": 5,
+                "to": 0,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 1,
+                "weight": 2
+            },
+            {
+                "from": 5,
+                "to": 2,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 3,
+                "weight": 4
+            },
+            {
+                "from": 5,
+                "to": 4,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 5,
+                "weight": 2
+            },
+            {
+                "from": 5,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 7,
+                "weight": 2
+            },
+            {
+                "from": 6,
+                "to": 0,
+                "weight": 3
+            },
+            {
+                "from": 6,
+                "to": 1,
+                "weight": 3
+            },
+            {
+                "from": 6,
+                "to": 2,
+                "weight": 1
+            },
+            {
+                "from": 6,
+                "to": 3,
+                "weight": 4
+            },
+            {
+                "from": 6,
+                "to": 4,
+                "weight": 1
+            },
+            {
+                "from": 6,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 6,
+                "to": 7,
+                "weight": 3
+            },
+            {
+                "from": 7,
+                "to": 0,
+                "weight": 2
+            },
+            {
+                "from": 7,
+                "to": 1,
+                "weight": 3
+            },
+            {
+                "from": 7,
+                "to": 2,
+                "weight": 4
+            },
+            {
+                "from": 7,
+                "to": 3,
+                "weight": 3
+            },
+            {
+                "from": 7,
+                "to": 4,
+                "weight": 2
+            },
+            {
+                "from": 7,
+                "to": 5,
+                "weight": 2
+            },
+            {
+                "from": 7,
+                "to": 6,
+                "weight": 3
+            }
+        ],
+        "parties": [
+            {
+                "id": 0,
+                "mandates": 15,
+                "name": "Bulbasaur",
+                "state": "Joined"
+            },
+            {
+                "id": 1,
+                "mandates": 15,
+                "name": "Charmander",
+                "state": "Waiting"
+            },
+            {
+                "id": 2,
+                "mandates": 15,
+                "name": "Squirtle",
+                "state": "Waiting"
+            },
+            {
+                "id": 3,
+                "mandates": 15,
+                "name": "Pikachu",
+                "state": "Waiting"
+            },
+            {
+                "id": 4,
+                "mandates": 10,
+                "name": "Eevee",
+                "state": "Joined"
+            },
+            {
+                "id": 5,
+                "mandates": 20,
+                "name": "Snorlax",
+                "state": "CollectingOffers"
+            },
+            {
+                "id": 6,
+                "mandates": 15,
+                "name": "Mew",
+                "state": "CollectingOffers"
+            },
+            {
+                "id": 7,
+                "mandates": 15,
+                "name": "Mewtwo",
+                "state": "Waiting"
+            }
+        ]
+    },
+    {
+        "agents": [
+            {
+                "id": 0,
+                "partyId": 0
+            },
+            {
+                "id": 1,
+                "partyId": 4
+            }
+        ],
+        "coalitions": [
+            {
+                "mandates": 15,
+                "parties": [
+                    0
+                ]
+            },
+            {
+                "mandates": 10,
+                "parties": [
+                    4
+                ]
+            }
+        ],
+        "edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 1
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 3
+            },
+            {
+                "from": 0,
+                "to": 4,
+                "weight": 3
+            },
+            {
+                "from": 0,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 0,
+                "to": 6,
+                "weight": 3
+            },
+            {
+                "from": 0,
+                "to": 7,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 0,
+                "weight": 1
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 5
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 3
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 5,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 6,
+                "weight": 3
+            },
+            {
+                "from": 1,
+                "to": 7,
+                "weight": 3
+            },
+            {
+                "from": 2,
+                "to": 0,
+                "weight": 2
+            },
+            {
+                "from": 2,
+                "to": 1,
+                "weight": 5
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 4
+            },
+            {
+                "from": 2,
+                "to": 4,
+                "weight": 2
+            },
+            {
+                "from": 2,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 2,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 2,
+                "to": 7,
+                "weight": 4
+            },
+            {
+                "from": 3,
+                "to": 0,
+                "weight": 3
+            },
+            {
+                "from": 3,
+                "to": 1,
+                "weight": 3
+            },
+            {
+                "from": 3,
+                "to": 2,
+                "weight": 4
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 3
+            },
+            {
+                "from": 3,
+                "to": 5,
+                "weight": 4
+            },
+            {
+                "from": 3,
+                "to": 6,
+                "weight": 4
+            },
+            {
+                "from": 3,
+                "to": 7,
+                "weight": 3
+            },
+            {
+                "from": 4,
+                "to": 0,
+                "weight": 3
+            },
+            {
+                "from": 4,
+                "to": 1,
+                "weight": 2
+            },
+            {
+                "from": 4,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 4,
+                "to": 3,
+                "weight": 3
+            },
+            {
+                "from": 4,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 4,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 4,
+                "to": 7,
+                "weight": 2
+            },
+            {
+                "from": 5,
+                "to": 0,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 1,
+                "weight": 2
+            },
+            {
+                "from": 5,
+                "to": 2,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 3,
+                "weight": 4
+            },
+            {
+                "from": 5,
+                "to": 4,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 5,
+                "weight": 2
+            },
+            {
+                "from": 5,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 7,
+                "weight": 2
+            },
+            {
+                "from": 6,
+                "to": 0,
+                "weight": 3
+            },
+            {
+                "from": 6,
+                "to": 1,
+                "weight": 3
+            },
+            {
+                "from": 6,
+                "to": 2,
+                "weight": 1
+            },
+            {
+                "from": 6,
+                "to": 3,
+                "weight": 4
+            },
+            {
+                "from": 6,
+                "to": 4,
+                "weight": 1
+            },
+            {
+                "from": 6,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 6,
+                "to": 7,
+                "weight": 3
+            },
+            {
+                "from": 7,
+                "to": 0,
+                "weight": 2
+            },
+            {
+                "from": 7,
+                "to": 1,
+                "weight": 3
+            },
+            {
+                "from": 7,
+                "to": 2,
+                "weight": 4
+            },
+            {
+                "from": 7,
+                "to": 3,
+                "weight": 3
+            },
+            {
+                "from": 7,
+                "to": 4,
+                "weight": 2
+            },
+            {
+                "from": 7,
+                "to": 5,
+                "weight": 2
+            },
+            {
+                "from": 7,
+                "to": 6,
+                "weight": 3
+            }
+        ],
+        "parties": [
+            {
+                "id": 0,
+                "mandates": 15,
+                "name": "Bulbasaur",
+                "state": "Joined"
+            },
+            {
+                "id": 1,
+                "mandates": 15,
+                "name": "Charmander",
+                "state": "CollectingOffers"
+            },
+            {
+                "id": 2,
+                "mandates": 15,
+                "name": "Squirtle",
+                "state": "Waiting"
+            },
+            {
+                "id": 3,
+                "mandates": 15,
+                "name": "Pikachu",
+                "state": "CollectingOffers"
+            },
+            {
+                "id": 4,
+                "mandates": 10,
+                "name": "Eevee",
+                "state": "Joined"
+            },
+            {
+                "id": 5,
+                "mandates": 20,
+                "name": "Snorlax",
+                "state": "CollectingOffers"
+            },
+            {
+                "id": 6,
+                "mandates": 15,
+                "name": "Mew",
+                "state": "CollectingOffers"
+            },
+            {
+                "id": 7,
+                "mandates": 15,
+                "name": "Mewtwo",
+                "state": "Waiting"
+            }
+        ]
+    },
+    {
+        "agents": [
+            {
+                "id": 0,
+                "partyId": 0
+            },
+            {
+                "id": 1,
+                "partyId": 4
+            }
+        ],
+        "coalitions": [
+            {
+                "mandates": 15,
+                "parties": [
+                    0
+                ]
+            },
+            {
+                "mandates": 10,
+                "parties": [
+                    4
+                ]
+            }
+        ],
+        "edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 1
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 3
+            },
+            {
+                "from": 0,
+                "to": 4,
+                "weight": 3
+            },
+            {
+                "from": 0,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 0,
+                "to": 6,
+                "weight": 3
+            },
+            {
+                "from": 0,
+                "to": 7,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 0,
+                "weight": 1
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 5
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 3
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 5,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 6,
+                "weight": 3
+            },
+            {
+                "from": 1,
+                "to": 7,
+                "weight": 3
+            },
+            {
+                "from": 2,
+                "to": 0,
+                "weight": 2
+            },
+            {
+                "from": 2,
+                "to": 1,
+                "weight": 5
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 4
+            },
+            {
+                "from": 2,
+                "to": 4,
+                "weight": 2
+            },
+            {
+                "from": 2,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 2,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 2,
+                "to": 7,
+                "weight": 4
+            },
+            {
+                "from": 3,
+                "to": 0,
+                "weight": 3
+            },
+            {
+                "from": 3,
+                "to": 1,
+                "weight": 3
+            },
+            {
+                "from": 3,
+                "to": 2,
+                "weight": 4
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 3
+            },
+            {
+                "from": 3,
+                "to": 5,
+                "weight": 4
+            },
+            {
+                "from": 3,
+                "to": 6,
+                "weight": 4
+            },
+            {
+                "from": 3,
+                "to": 7,
+                "weight": 3
+            },
+            {
+                "from": 4,
+                "to": 0,
+                "weight": 3
+            },
+            {
+                "from": 4,
+                "to": 1,
+                "weight": 2
+            },
+            {
+                "from": 4,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 4,
+                "to": 3,
+                "weight": 3
+            },
+            {
+                "from": 4,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 4,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 4,
+                "to": 7,
+                "weight": 2
+            },
+            {
+                "from": 5,
+                "to": 0,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 1,
+                "weight": 2
+            },
+            {
+                "from": 5,
+                "to": 2,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 3,
+                "weight": 4
+            },
+            {
+                "from": 5,
+                "to": 4,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 5,
+                "weight": 2
+            },
+            {
+                "from": 5,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 7,
+                "weight": 2
+            },
+            {
+                "from": 6,
+                "to": 0,
+                "weight": 3
+            },
+            {
+                "from": 6,
+                "to": 1,
+                "weight": 3
+            },
+            {
+                "from": 6,
+                "to": 2,
+                "weight": 1
+            },
+            {
+                "from": 6,
+                "to": 3,
+                "weight": 4
+            },
+            {
+                "from": 6,
+                "to": 4,
+                "weight": 1
+            },
+            {
+                "from": 6,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 6,
+                "to": 7,
+                "weight": 3
+            },
+            {
+                "from": 7,
+                "to": 0,
+                "weight": 2
+            },
+            {
+                "from": 7,
+                "to": 1,
+                "weight": 3
+            },
+            {
+                "from": 7,
+                "to": 2,
+                "weight": 4
+            },
+            {
+                "from": 7,
+                "to": 3,
+                "weight": 3
+            },
+            {
+                "from": 7,
+                "to": 4,
+                "weight": 2
+            },
+            {
+                "from": 7,
+                "to": 5,
+                "weight": 2
+            },
+            {
+                "from": 7,
+                "to": 6,
+                "weight": 3
+            }
+        ],
+        "parties": [
+            {
+                "id": 0,
+                "mandates": 15,
+                "name": "Bulbasaur",
+                "state": "Joined"
+            },
+            {
+                "id": 1,
+                "mandates": 15,
+                "name": "Charmander",
+                "state": "CollectingOffers"
+            },
+            {
+                "id": 2,
+                "mandates": 15,
+                "name": "Squirtle",
+                "state": "CollectingOffers"
+            },
+            {
+                "id": 3,
+                "mandates": 15,
+                "name": "Pikachu",
+                "state": "CollectingOffers"
+            },
+            {
+                "id": 4,
+                "mandates": 10,
+                "name": "Eevee",
+                "state": "Joined"
+            },
+            {
+                "id": 5,
+                "mandates": 20,
+                "name": "Snorlax",
+                "state": "CollectingOffers"
+            },
+            {
+                "id": 6,
+                "mandates": 15,
+                "name": "Mew",
+                "state": "CollectingOffers"
+            },
+            {
+                "id": 7,
+                "mandates": 15,
+                "name": "Mewtwo",
+                "state": "CollectingOffers"
+            }
+        ]
+    },
+    {
+        "agents": [
+            {
+                "id": 0,
+                "partyId": 0
+            },
+            {
+                "id": 1,
+                "partyId": 4
+            },
+            {
+                "id": 2,
+                "partyId": 5
+            },
+            {
+                "id": 3,
+                "partyId": 6
+            }
+        ],
+        "coalitions": [
+            {
+                "mandates": 30,
+                "parties": [
+                    0,
+                    6
+                ]
+            },
+            {
+                "mandates": 30,
+                "parties": [
+                    4,
+                    5
+                ]
+            }
+        ],
+        "edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 1
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 3
+            },
+            {
+                "from": 0,
+                "to": 4,
+                "weight": 3
+            },
+            {
+                "from": 0,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 0,
+                "to": 6,
+                "weight": 3
+            },
+            {
+                "from": 0,
+                "to": 7,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 0,
+                "weight": 1
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 5
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 3
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 5,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 6,
+                "weight": 3
+            },
+            {
+                "from": 1,
+                "to": 7,
+                "weight": 3
+            },
+            {
+                "from": 2,
+                "to": 0,
+                "weight": 2
+            },
+            {
+                "from": 2,
+                "to": 1,
+                "weight": 5
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 4
+            },
+            {
+                "from": 2,
+                "to": 4,
+                "weight": 2
+            },
+            {
+                "from": 2,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 2,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 2,
+                "to": 7,
+                "weight": 4
+            },
+            {
+                "from": 3,
+                "to": 0,
+                "weight": 3
+            },
+            {
+                "from": 3,
+                "to": 1,
+                "weight": 3
+            },
+            {
+                "from": 3,
+                "to": 2,
+                "weight": 4
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 3
+            },
+            {
+                "from": 3,
+                "to": 5,
+                "weight": 4
+            },
+            {
+                "from": 3,
+                "to": 6,
+                "weight": 4
+            },
+            {
+                "from": 3,
+                "to": 7,
+                "weight": 3
+            },
+            {
+                "from": 4,
+                "to": 0,
+                "weight": 3
+            },
+            {
+                "from": 4,
+                "to": 1,
+                "weight": 2
+            },
+            {
+                "from": 4,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 4,
+                "to": 3,
+                "weight": 3
+            },
+            {
+                "from": 4,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 4,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 4,
+                "to": 7,
+                "weight": 2
+            },
+            {
+                "from": 5,
+                "to": 0,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 1,
+                "weight": 2
+            },
+            {
+                "from": 5,
+                "to": 2,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 3,
+                "weight": 4
+            },
+            {
+                "from": 5,
+                "to": 4,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 5,
+                "weight": 2
+            },
+            {
+                "from": 5,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 7,
+                "weight": 2
+            },
+            {
+                "from": 6,
+                "to": 0,
+                "weight": 3
+            },
+            {
+                "from": 6,
+                "to": 1,
+                "weight": 3
+            },
+            {
+                "from": 6,
+                "to": 2,
+                "weight": 1
+            },
+            {
+                "from": 6,
+                "to": 3,
+                "weight": 4
+            },
+            {
+                "from": 6,
+                "to": 4,
+                "weight": 1
+            },
+            {
+                "from": 6,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 6,
+                "to": 7,
+                "weight": 3
+            },
+            {
+                "from": 7,
+                "to": 0,
+                "weight": 2
+            },
+            {
+                "from": 7,
+                "to": 1,
+                "weight": 3
+            },
+            {
+                "from": 7,
+                "to": 2,
+                "weight": 4
+            },
+            {
+                "from": 7,
+                "to": 3,
+                "weight": 3
+            },
+            {
+                "from": 7,
+                "to": 4,
+                "weight": 2
+            },
+            {
+                "from": 7,
+                "to": 5,
+                "weight": 2
+            },
+            {
+                "from": 7,
+                "to": 6,
+                "weight": 3
+            }
+        ],
+        "parties": [
+            {
+                "id": 0,
+                "mandates": 15,
+                "name": "Bulbasaur",
+                "state": "Joined"
+            },
+            {
+                "id": 1,
+                "mandates": 15,
+                "name": "Charmander",
+                "state": "CollectingOffers"
+            },
+            {
+                "id": 2,
+                "mandates": 15,
+                "name": "Squirtle",
+                "state": "CollectingOffers"
+            },
+            {
+                "id": 3,
+                "mandates": 15,
+                "name": "Pikachu",
+                "state": "CollectingOffers"
+            },
+            {
+                "id": 4,
+                "mandates": 10,
+                "name": "Eevee",
+                "state": "Joined"
+            },
+            {
+                "id": 5,
+                "mandates": 20,
+                "name": "Snorlax",
+                "state": "Joined"
+            },
+            {
+                "id": 6,
+                "mandates": 15,
+                "name": "Mew",
+                "state": "Joined"
+            },
+            {
+                "id": 7,
+                "mandates": 15,
+                "name": "Mewtwo",
+                "state": "CollectingOffers"
+            }
+        ]
+    },
+    {
+        "agents": [
+            {
+                "id": 0,
+                "partyId": 0
+            },
+            {
+                "id": 1,
+                "partyId": 4
+            },
+            {
+                "id": 2,
+                "partyId": 5
+            },
+            {
+                "id": 3,
+                "partyId": 6
+            },
+            {
+                "id": 4,
+                "partyId": 1
+            },
+            {
+                "id": 5,
+                "partyId": 3
+            }
+        ],
+        "coalitions": [
+            {
+                "mandates": 60,
+                "parties": [
+                    0,
+                    6,
+                    1,
+                    3
+                ]
+            },
+            {
+                "mandates": 30,
+                "parties": [
+                    4,
+                    5
+                ]
+            }
+        ],
+        "edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 1
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 3
+            },
+            {
+                "from": 0,
+                "to": 4,
+                "weight": 3
+            },
+            {
+                "from": 0,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 0,
+                "to": 6,
+                "weight": 3
+            },
+            {
+                "from": 0,
+                "to": 7,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 0,
+                "weight": 1
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 5
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 3
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 5,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 6,
+                "weight": 3
+            },
+            {
+                "from": 1,
+                "to": 7,
+                "weight": 3
+            },
+            {
+                "from": 2,
+                "to": 0,
+                "weight": 2
+            },
+            {
+                "from": 2,
+                "to": 1,
+                "weight": 5
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 4
+            },
+            {
+                "from": 2,
+                "to": 4,
+                "weight": 2
+            },
+            {
+                "from": 2,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 2,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 2,
+                "to": 7,
+                "weight": 4
+            },
+            {
+                "from": 3,
+                "to": 0,
+                "weight": 3
+            },
+            {
+                "from": 3,
+                "to": 1,
+                "weight": 3
+            },
+            {
+                "from": 3,
+                "to": 2,
+                "weight": 4
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 3
+            },
+            {
+                "from": 3,
+                "to": 5,
+                "weight": 4
+            },
+            {
+                "from": 3,
+                "to": 6,
+                "weight": 4
+            },
+            {
+                "from": 3,
+                "to": 7,
+                "weight": 3
+            },
+            {
+                "from": 4,
+                "to": 0,
+                "weight": 3
+            },
+            {
+                "from": 4,
+                "to": 1,
+                "weight": 2
+            },
+            {
+                "from": 4,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 4,
+                "to": 3,
+                "weight": 3
+            },
+            {
+                "from": 4,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 4,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 4,
+                "to": 7,
+                "weight": 2
+            },
+            {
+                "from": 5,
+                "to": 0,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 1,
+                "weight": 2
+            },
+            {
+                "from": 5,
+                "to": 2,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 3,
+                "weight": 4
+            },
+            {
+                "from": 5,
+                "to": 4,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 5,
+                "weight": 2
+            },
+            {
+                "from": 5,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 7,
+                "weight": 2
+            },
+            {
+                "from": 6,
+                "to": 0,
+                "weight": 3
+            },
+            {
+                "from": 6,
+                "to": 1,
+                "weight": 3
+            },
+            {
+                "from": 6,
+                "to": 2,
+                "weight": 1
+            },
+            {
+                "from": 6,
+                "to": 3,
+                "weight": 4
+            },
+            {
+                "from": 6,
+                "to": 4,
+                "weight": 1
+            },
+            {
+                "from": 6,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 6,
+                "to": 7,
+                "weight": 3
+            },
+            {
+                "from": 7,
+                "to": 0,
+                "weight": 2
+            },
+            {
+                "from": 7,
+                "to": 1,
+                "weight": 3
+            },
+            {
+                "from": 7,
+                "to": 2,
+                "weight": 4
+            },
+            {
+                "from": 7,
+                "to": 3,
+                "weight": 3
+            },
+            {
+                "from": 7,
+                "to": 4,
+                "weight": 2
+            },
+            {
+                "from": 7,
+                "to": 5,
+                "weight": 2
+            },
+            {
+                "from": 7,
+                "to": 6,
+                "weight": 3
+            }
+        ],
+        "parties": [
+            {
+                "id": 0,
+                "mandates": 15,
+                "name": "Bulbasaur",
+                "state": "Joined"
+            },
+            {
+                "id": 1,
+                "mandates": 15,
+                "name": "Charmander",
+                "state": "Joined"
+            },
+            {
+                "id": 2,
+                "mandates": 15,
+                "name": "Squirtle",
+                "state": "CollectingOffers"
+            },
+            {
+                "id": 3,
+                "mandates": 15,
+                "name": "Pikachu",
+                "state": "Joined"
+            },
+            {
+                "id": 4,
+                "mandates": 10,
+                "name": "Eevee",
+                "state": "Joined"
+            },
+            {
+                "id": 5,
+                "mandates": 20,
+                "name": "Snorlax",
+                "state": "Joined"
+            },
+            {
+                "id": 6,
+                "mandates": 15,
+                "name": "Mew",
+                "state": "Joined"
+            },
+            {
+                "id": 7,
+                "mandates": 15,
+                "name": "Mewtwo",
+                "state": "CollectingOffers"
+            }
+        ]
+    },
+    {
+        "agents": [
+            {
+                "id": 0,
+                "partyId": 0
+            },
+            {
+                "id": 1,
+                "partyId": 4
+            },
+            {
+                "id": 2,
+                "partyId": 5
+            },
+            {
+                "id": 3,
+                "partyId": 6
+            },
+            {
+                "id": 4,
+                "partyId": 1
+            },
+            {
+                "id": 5,
+                "partyId": 3
+            },
+            {
+                "id": 6,
+                "partyId": 2
+            },
+            {
+                "id": 7,
+                "partyId": 7
+            }
+        ],
+        "coalitions": [
+            {
+                "mandates": 90,
+                "parties": [
+                    0,
+                    6,
+                    1,
+                    3,
+                    2,
+                    7
+                ]
+            },
+            {
+                "mandates": 30,
+                "parties": [
+                    4,
+                    5
+                ]
+            }
+        ],
+        "edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 1
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 3
+            },
+            {
+                "from": 0,
+                "to": 4,
+                "weight": 3
+            },
+            {
+                "from": 0,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 0,
+                "to": 6,
+                "weight": 3
+            },
+            {
+                "from": 0,
+                "to": 7,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 0,
+                "weight": 1
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 5
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 3
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 5,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 6,
+                "weight": 3
+            },
+            {
+                "from": 1,
+                "to": 7,
+                "weight": 3
+            },
+            {
+                "from": 2,
+                "to": 0,
+                "weight": 2
+            },
+            {
+                "from": 2,
+                "to": 1,
+                "weight": 5
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 4
+            },
+            {
+                "from": 2,
+                "to": 4,
+                "weight": 2
+            },
+            {
+                "from": 2,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 2,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 2,
+                "to": 7,
+                "weight": 4
+            },
+            {
+                "from": 3,
+                "to": 0,
+                "weight": 3
+            },
+            {
+                "from": 3,
+                "to": 1,
+                "weight": 3
+            },
+            {
+                "from": 3,
+                "to": 2,
+                "weight": 4
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 3
+            },
+            {
+                "from": 3,
+                "to": 5,
+                "weight": 4
+            },
+            {
+                "from": 3,
+                "to": 6,
+                "weight": 4
+            },
+            {
+                "from": 3,
+                "to": 7,
+                "weight": 3
+            },
+            {
+                "from": 4,
+                "to": 0,
+                "weight": 3
+            },
+            {
+                "from": 4,
+                "to": 1,
+                "weight": 2
+            },
+            {
+                "from": 4,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 4,
+                "to": 3,
+                "weight": 3
+            },
+            {
+                "from": 4,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 4,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 4,
+                "to": 7,
+                "weight": 2
+            },
+            {
+                "from": 5,
+                "to": 0,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 1,
+                "weight": 2
+            },
+            {
+                "from": 5,
+                "to": 2,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 3,
+                "weight": 4
+            },
+            {
+                "from": 5,
+                "to": 4,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 5,
+                "weight": 2
+            },
+            {
+                "from": 5,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 7,
+                "weight": 2
+            },
+            {
+                "from": 6,
+                "to": 0,
+                "weight": 3
+            },
+            {
+                "from": 6,
+                "to": 1,
+                "weight": 3
+            },
+            {
+                "from": 6,
+                "to": 2,
+                "weight": 1
+            },
+            {
+                "from": 6,
+                "to": 3,
+                "weight": 4
+            },
+            {
+                "from": 6,
+                "to": 4,
+                "weight": 1
+            },
+            {
+                "from": 6,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 6,
+                "to": 7,
+                "weight": 3
+            },
+            {
+                "from": 7,
+                "to": 0,
+                "weight": 2
+            },
+            {
+                "from": 7,
+                "to": 1,
+                "weight": 3
+            },
+            {
+                "from": 7,
+                "to": 2,
+                "weight": 4
+            },
+            {
+                "from": 7,
+                "to": 3,
+                "weight": 3
+            },
+            {
+                "from": 7,
+                "to": 4,
+                "weight": 2
+            },
+            {
+                "from": 7,
+                "to": 5,
+                "weight": 2
+            },
+            {
+                "from": 7,
+                "to": 6,
+                "weight": 3
+            }
+        ],
+        "parties": [
+            {
+                "id": 0,
+                "mandates": 15,
+                "name": "Bulbasaur",
+                "state": "Joined"
+            },
+            {
+                "id": 1,
+                "mandates": 15,
+                "name": "Charmander",
+                "state": "Joined"
+            },
+            {
+                "id": 2,
+                "mandates": 15,
+                "name": "Squirtle",
+                "state": "Joined"
+            },
+            {
+                "id": 3,
+                "mandates": 15,
+                "name": "Pikachu",
+                "state": "Joined"
+            },
+            {
+                "id": 4,
+                "mandates": 10,
+                "name": "Eevee",
+                "state": "Joined"
+            },
+            {
+                "id": 5,
+                "mandates": 20,
+                "name": "Snorlax",
+                "state": "Joined"
+            },
+            {
+                "id": 6,
+                "mandates": 15,
+                "name": "Mew",
+                "state": "Joined"
+            },
+            {
+                "id": 7,
+                "mandates": 15,
+                "name": "Mewtwo",
+                "state": "Joined"
+            }
+        ]
+    }
+]

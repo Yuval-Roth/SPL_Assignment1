@@ -19,6 +19,9 @@ Agent::Agent(const Agent& other):mAgentId(other.mAgentId),mPartyId(other.mPartyI
 
 Agent& Agent::operator=(const Agent& other)
 {
+    if(this != &other){
+        delete mSelectionPolicy;
+    }
     mAgentId = other.mAgentId;
     mPartyId = other.mPartyId;
     if(other.mSelectionPolicy != NULL)
@@ -68,7 +71,10 @@ void Agent::step(Simulation &sim)
     list<Party*> partiesToPropose;
     for(int i = 0; i< pCount ; i++)
     {
-        if(i != mPartyId && sim.getParty(i).getState() != State::Joined && graph.getEdgeWeight(i,mPartyId) > 0 && coalition->checkIfAlreadyProposed(i) == false)
+        if(i != mPartyId &&
+            sim.getParty(i).getState() != State::Joined &&
+            graph.getEdgeWeight(i,mPartyId) > 0 &&
+            coalition->checkIfAlreadyProposed(i) == false)
         {
             partiesToPropose.push_front(&(graph.getParty(i)));         
         }

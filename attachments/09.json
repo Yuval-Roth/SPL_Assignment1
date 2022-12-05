@@ -1,0 +1,47 @@
+{
+    "parties": [
+      {
+        "name": "Ted Mosby",
+        "mandates": 24,
+        "join_policy": "M"
+      },
+      {
+        "name": "Barney Stinson",
+        "mandates": 24,
+        "join_policy": "M"
+      },
+      {
+        "name": "Robin Scherbatsky",
+        "mandates": 24,
+        "join_policy": "M"
+      },
+      {
+        "name": "Lily Aldrin",
+        "mandates": 24,
+        "join_policy": "L"
+      },
+      {
+        "name": "Marshall Eriksen",
+        "mandates": 24,
+        "join_policy": "L"
+      }
+    ],
+    "graph": [
+      [0, 0, 3, 0, 0],
+      [0, 0, 3, 0, 0],
+      [3, 3, 0, 2, 2],
+      [0, 0, 2, 0, 0],
+      [0, 0, 2, 0, 0]
+    ],
+    "agents": [
+      {
+        "party_id": 0,
+        "selection_policy": "E"
+      },
+      {
+        "party_id": 1,
+        "selection_policy": "E"
+      }
+    ]
+  }
+  

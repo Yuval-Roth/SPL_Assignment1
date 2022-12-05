@@ -40,10 +40,19 @@ Party* MandatesSelectionPolicy::selectParty(list<Party*>& parties, Graph& graph,
     Party* chosenParty = 0;
     
     for(Party* currParty : parties){
-        if (currParty->getMandates() > maxVal)
+        int currMandates = currParty->getMandates();
+        if (currMandates >= maxVal)
         {
-            maxVal = currParty->getMandates();
-            chosenParty = currParty;
+            if(currMandates == maxVal)
+            {
+                if(currParty->getId() < chosenParty->getId())
+                    chosenParty = currParty;    
+            }
+            else{
+                maxVal = currParty->getMandates();
+                chosenParty = currParty;
+            }
+            
         }   
     }
     return chosenParty;

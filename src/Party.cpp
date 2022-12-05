@@ -13,6 +13,9 @@ Party::Party(const Party& other): mId(other.mId), mName(other.mName), mMandates(
 
 Party& Party::operator=(const Party& other)
 {   
+    if(this != &other){
+        delete mJoinPolicy;
+    }
     mId = other.mId;
     mName = other.mName;
     mMandates = other.mMandates;
